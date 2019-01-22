@@ -9,6 +9,8 @@ $(function () {
 
 	var dishSearch = new DishSearchView($(".dishSearch"), model);
 
+	var dishDetail = new DishDetailsView($(".dishDetail"), model);
+
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
 	 * use the $('someSelector') to search for elements in the whole HTML.
