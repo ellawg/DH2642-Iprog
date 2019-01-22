@@ -1,5 +1,25 @@
-.dish{
+@media(min-width:400px){
+    .container {
+        display: flex;
+        flex-flow: wrap column;
+    }
+    .dishSearch{
+        display: hidden;
+    }
+
+}
+
+
+h1 {
+    font-size: 36px;text-align: center;
+    background: gray;
     padding: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.dish{
+    padding: 25px;
     border: 2px solid #000;
     width: 20%;
     min-width: 170px;
@@ -14,10 +34,80 @@
 .container{
     display:flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+#sideBar {
+    display: flex;
+    flex-flow: column;
+    flex:1.5;
+    padding: 10px;
+    border: #000 solid 2px;
+  
+}
+.guestPlanner{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between; 
+}
+.peopleBtn{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.btns{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.menuLabels {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background: lightgray;
+    border:#000 solid 1px;
+    padding: 10px;
+}
+
+.priceAndBtn{
+    display: flex;
+    flex-flow: column;
+}
+
+#totalPrice{
+    text-align: right;
+    color: darkred;
+}
+
+/* DISH SEARCH*/
 
 .dishList{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
+
 }
+
+.input{
+    width: 20%;
+}
+
+.dishSearch{
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    padding:20px;
+}
+.dishSearch > *{
+    padding: 10px;
+}
+
+.findDish{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dinner planner</title>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous" />
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!-- HEADER-->
+  <h1>Dinner Planner</h1>
+  <!-- CONTAINER WITH ALL CONTENT -->
+  <div class="container">
+    <!-- SIDE BAR -->
+    <div id="sideBar">
+      <div class="guestPlanner">
+        <h2>My dinner</h2>
+        <div class="peopleBtn">
+          <div>People: <span id="numberOfGuests"></span></div>
+          <div class="btns">
+            <button id="minusGuest" class="btn">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button id="plusGuest" class="btn">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="menuPlanner">
+        <ul class="menuLabels">
+          <li>Dish Name</li>
+          <li>Cost</li>
+        </ul>
+        <ul class="menuDish">
+        </ul>
+        <div class="priceAndBtn">
+          <div id="totalPrice">SEK 0.00</div>
+          <a class="button" id="confirmBtn" title="Disabled button" disabled> Confirm Dinner </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISH SEARCH -->
+    <div class="dishSearch">
+      <h2>Find a dish</h2>
+      <div class="findDish">
+        <input class="input" type="text" placeholder="Enter key words">
+        <div class="select">
+          <select>
+            <option>All</option>
+            <option>Starter</option>
+            <option>Main dish</option>
+            <option>Dessert</option>
+          </select>
+        </div>
+        <a class="button" id="searchBtn">Search</a>
+      </div>
+      <div class="dishList">
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+  <script src="js/model/dinnerModel.js"></script>
+
+  <!-- TODO: Here you should include JS code for your other views -->
+  <script src="js/view/sideBarView.js"></script>
+  <script src="js/view/dishSearchView.js"></script>
+  <script src="js/view/dishItemView.js"></script>
+</body>
+
+</html>
