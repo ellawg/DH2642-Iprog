@@ -17,59 +17,70 @@
 </head>
 
 <body>
-  <!-- HEADER-->
-  <h1>Dinner Planner</h1>
+
   <!-- CONTAINER WITH ALL CONTENT -->
   <div class="container">
+    <!-- HEADER-->
+    <h1>Dinner Planner</h1>
+
+
+
     <!-- SIDE BAR -->
-    <div id="sideBar">
-      <div class="guestPlanner">
+    <div class="sideBar">
+      <div class="guestPlanner margin">
         <h2>My dinner</h2>
         <div class="peopleBtn">
           <div>People: <span id="numberOfGuests"></span></div>
           <div class="btns">
             <button id="minusGuest" class="btn">
-              <i class="fas fa-minus"></i>
+              <i class="fas fa-angle-down"></i>
             </button>
             <button id="plusGuest" class="btn">
-              <i class="fas fa-plus"></i>
+              <i class="fas fa-angle-up"></i>
             </button>
           </div>
         </div>
       </div>
       <div class="menuPlanner">
-        <ul class="menuLabels">
+        <ul class="menuLabels margin">
           <li>Dish Name</li>
           <li>Cost</li>
         </ul>
         <ul class="menuDish">
         </ul>
-        <div class="priceAndBtn">
-          <div id="totalPrice">SEK 0.00</div>
-          <a class="button" id="confirmBtn" title="Disabled button" disabled> Confirm Dinner </a>
+        <div class="priceAndBtn margin">
+          <p id="totalPrice"></p> <!--ADD IN THE VIEW-->
+          <a class="button" id="confirmBtn" title="Disabled button" disabled> Confirm Dinner </a> <!--ADD IN THE VIEW-->
         </div>
       </div>
     </div>
 
+
     <!-- DISH SEARCH -->
     <div class="dishSearch">
-      <h2>Find a dish</h2>
-      <div class="findDish">
-        <input class="input" type="text" placeholder="Enter key words">
-        <div class="select">
-          <select>
-            <option>All</option>
-            <option>Starter</option>
-            <option>Main dish</option>
-            <option>Dessert</option>
-          </select>
+      <div class="titleSearch">
+        <h2>Find a dish</h2> <!--ADD IN THE VIEW-->
+        <div class="findDish">
+          <input class="margin input" type="text" placeholder="Enter key words">
+          <div class="margin select">
+            <select>
+              <option>All</option>
+              <option>Starter</option>
+              <option>Main dish</option>
+              <option>Dessert</option>
+            </select>
+          </div>
+          <a class="margin button" id="searchBtn">Search</a> <!--ADD IN THE VIEW-->
         </div>
-        <a class="button" id="searchBtn">Search</a>
       </div>
+
       <div class="dishList">
       </div>
     </div>
+
+
   </div>
+
 
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery.js"></script>
@@ -82,6 +93,7 @@
   <script src="js/view/sideBarView.js"></script>
   <script src="js/view/dishSearchView.js"></script>
   <script src="js/view/dishItemView.js"></script>
+  <script src="js/view/dishDetailsView.js"></script>
 </body>
 
 </html>

@@ -19,40 +19,48 @@
 
 <body>
     <!-- CONTAINER WITH ALL CONTENT -->
-    <div class='container'>
-        <!-- SIDEBAR VIEW -->
-        <div id="sideBar">
-            <h2>My dinner</h2>
-            <div class="guestPlanner">
-                <div>People: <span id="numberOfGuests"></span></div>
-                <div class='btns'>
-                    <button id="minusGuest" class="btn">
-                        <i class="fas fa-minus"></i>
-                    </button>
-                    <button id="plusGuest" class="btn">
-                        <i class="fas fa-plus"></i>
-                    </button>
+    <div class="container">
+        <!-- HEADER-->
+        <h1>Dinner Planner</h1>
+        <!-- SIDE BAR -->
+        <div class="sideBar">
+            <div class="guestPlanner margin">
+                <h2>My dinner</h2>
+                <div class="peopleBtn">
+                    <div>People: <span id="numberOfGuests"></span></div>
+                    <div class="btns">
+                        <button id="minusGuest" class="btn">
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <button id="plusGuest" class="btn">
+                            <i class="fas fa-angle-up"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="menuPlanner">
-                <ul class="menuLabels">
+                <ul class="menuLabels margin">
                     <li>Dish Name</li>
                     <li>Cost</li>
                 </ul>
                 <ul class="menuDish">
-                    <div id="totalPrice">SEK 0.00
-                    </div>
-
                 </ul>
-                <a class="button" id="confirmBtn" title="Disabled button" disabled> Confirm Dinner </a>
+                <div class="priceAndBtn margin">
+                    <p id="totalPrice"></p>
+                    <a class="button" id="confirmBtn" title="Disabled button" disabled> Confirm Dinner </a>
+                </div>
             </div>
         </div>
 
         <!-- DISH DETAIL VIEW-->
+
         <div class="dishDetail">
-            <div class="dishIngredients"></div>
-            <div class="dishQuantity"></div>
-            <div class="dishPrice"></div>
+            <div class="imageName"></div>
+            <div class="dishInfo">
+                <div class="dishIngredients frame"></div>
+                <div class="dishQuantity frame"></div>
+                <div class="dishPrice frame"></div>
+            </div>
         </div>
 
 

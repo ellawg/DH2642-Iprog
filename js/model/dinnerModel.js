@@ -25,6 +25,7 @@ var DinnerModel = function () {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function () {
 		//TODO Lab 1
+		
 		const starter = getSelectedDish('starter');
 		const main = getSelectedDish('main dish');
 		const dessert = getSelectedDish('dessert');
@@ -45,7 +46,8 @@ var DinnerModel = function () {
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function () {
 		//TODO Lab 1
-		const totalPrice = this.getAllIngredients * this.getNumberOfGuests;
+		var totalPrice = 0.00;
+		var totalPrice = this.getAllIngredients * this.getNumberOfGuests;
 		return totalPrice;
 	}
 
