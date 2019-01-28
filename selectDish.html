@@ -27,6 +27,7 @@
 
     <!-- SIDE BAR -->
     <div class="sideBar">
+
       <div class="guestPlanner margin">
         <h2>My dinner</h2>
         <div class="peopleBtn">
@@ -39,27 +40,42 @@
               <i class="fas fa-angle-up"></i>
             </button>
           </div>
+          <nav class="navbar" role="navigation" aria-label="main navigation">
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="planner">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
         </div>
+
       </div>
-      <div class="menuPlanner">
-        <ul class="menuLabels margin">
+
+      <div class="menuPlanner navbar-menu" id="planner">
+        <div class="navbar-start">
+        <ul class="menuLabels margin navbar-item">
           <li>Dish Name</li>
           <li>Cost</li>
         </ul>
-        <ul class="menuDish">
+        <ul class="menuDish navbar-item">
         </ul>
-        <div class="priceAndBtn margin">
-          <p id="totalPrice"></p> <!--ADD IN THE VIEW-->
+        <div class="priceAndBtn margin navbar-item">
+          <p id="totalPrice"></p>
+          <!--ADD IN THE VIEW-->
           <a class="button" id="confirmBtn" title="Disabled button" disabled> Confirm Dinner </a> <!--ADD IN THE VIEW-->
         </div>
       </div>
+      </nav>
+
     </div>
+    </div>
+
 
 
     <!-- DISH SEARCH -->
     <div class="dishSearch">
       <div class="titleSearch">
-        <h2>Find a dish</h2> <!--ADD IN THE VIEW-->
+        <h2>Find a dish</h2>
+        <!--ADD IN THE VIEW-->
         <div class="findDish">
           <input class="margin input" type="text" placeholder="Enter key words">
           <div class="margin select">
@@ -70,7 +86,8 @@
               <option>Dessert</option>
             </select>
           </div>
-          <a class="margin button" id="searchBtn">Search</a> <!--ADD IN THE VIEW-->
+          <a class="margin button" id="searchBtn">Search</a>
+          <!--ADD IN THE VIEW-->
         </div>
       </div>
 

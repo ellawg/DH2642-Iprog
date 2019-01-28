@@ -30,6 +30,7 @@ var DinnerModel = function () {
 		const main = getSelectedDish('main dish');
 		const dessert = getSelectedDish('dessert');
 		const menuList = [starter, main, dessert];
+		console.log(menuList);
 		return menuList;
 	}
 
@@ -40,6 +41,7 @@ var DinnerModel = function () {
 		this.getFullMenu.forEach(function (item) {
 			allIngredients.concat(item.ingredients);
 		})
+		console.log('ingred' + allIngredients);
 		return allIngredients;
 	}
 
@@ -47,7 +49,8 @@ var DinnerModel = function () {
 	this.getTotalMenuPrice = function () {
 		//TODO Lab 1
 		var totalPrice = 0.00;
-		var totalPrice = this.getAllIngredients * this.getNumberOfGuests;
+		var totalPrice = this.getAllIngredients.price;
+		console.log(totalPrice)
 		return totalPrice;
 	}
 
