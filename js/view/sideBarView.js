@@ -6,6 +6,7 @@ var SideBarView = function (container, model) {
     numberOfGuests.html(model.getNumberOfGuests());
 
     model.addDishToMenu(1);
+    model.addDishToMenu(200);
     totalPrice.html(model.getTotalMenuPrice());
 
     this.plusButton = container.find('#plusGuest');
