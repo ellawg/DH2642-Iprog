@@ -1,0 +1,24 @@
+.header{
+    font-size: 1.5em;
+    background-color: lightslategray;
+    height: 20vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcomeView{
+    height: 80vh;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.welcomeView button{
+    margin: 5%;
+}
+
+.is-center{
+    align-items: center;
+    justify-content: center;
+}
