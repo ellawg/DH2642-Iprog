@@ -11,6 +11,8 @@ $(function() {
 
 	var dishDetails = new DishDetailsView($(".dishDetailsView"), model);
 
+	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
