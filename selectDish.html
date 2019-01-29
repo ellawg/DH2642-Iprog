@@ -18,22 +18,27 @@
 <body>
     <h1 class="header column is-flex is-center">Dinner planner</h1>
     <div class="container">
-        <div class="sideBarView column is-one-quarter">
-            <div>People: <span id="numberOfGuests"></span></div>
-            <div class="guestBtns">
-                <button id="minusGuest" class="btn">
-                    <i class="fas fa-angle-down"></i>
-                </button>
-                <button id="plusGuest" class="btn">
-                    <i class="fas fa-angle-up"></i>
-                </button>
+        <div class="columns">
+            <div class="sideBarView column is-one-quarter">
+                <div>People: <span id="numberOfGuests"></span></div>
+                <div class="guestBtns">
+                    <button id="minusGuest" class="btn">
+                        <i class="fas fa-angle-down"></i>
+                    </button>
+                    <button id="plusGuest" class="btn">
+                        <i class="fas fa-angle-up"></i>
+                    </button>
+                </div>
+                <ul class="menuLabels">
+                    <li>Dish name</li>
+                    <li>Cost</li>
+                </ul>
+                <div><span id="totalPrice"></span></div>
+                <button class="button">Confirm dinner</button>
             </div>
-            <ul class="menuLabels">
-                <li>Dish name</li>
-                <li>Cost</li>
-            </ul>
-            <div><span id="totalPrice"></span></div>
-            <button class="button">Confirm dinner</button>
+            <div class="dishSearchView column">
+
+            </div>
         </div>
     </div>
 
@@ -46,6 +51,8 @@
     <script src="js/app.js"></script>
     <script src="js/model/dinnerModel.js"></script>
     <script src="js/view/sideBarView.js"></script>
+    <script src="js/view/dishSearchView.js"></script>
+    <script src="js/view/dishItemView.js"></script>
     <!-- TODO: Here you should include JS code for your other views -->
 </body>
 

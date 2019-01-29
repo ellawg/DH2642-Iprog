@@ -7,6 +7,7 @@ $(function() {
 
 	var sideBar = new SideBarView($(".sideBarView"), model);
 
+	var dishSearch = new DishSearchView($(".dishSearchView"), model);
 
 
 	/**

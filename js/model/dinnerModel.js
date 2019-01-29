@@ -53,7 +53,7 @@ var DinnerModel = function() {
 		let totalPrice = 0.00;
 		const ingredients = this.getAllIngredients();
 		ingredients.forEach(function(item){
-			totalPrice += item.price * item.quantity;
+			totalPrice += item.price;
 		})
 		totalPrice = totalPrice * this.getNumberOfGuests();
 		console.log(totalPrice);
