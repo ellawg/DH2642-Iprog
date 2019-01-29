@@ -1,23 +1,20 @@
 var DishDetailsView = function (container, model) {
     const dish = model.getDish(1);
-    console.log(dish.name)
 
-    const styleDiv = container.find('.imageName');
+    const dishInfo = container.find('.dishInfo');
+    const dishSpecs = container.find('.dishSpecs');
 
-    styleDiv.append('<p class="dishName1">' + dish.name + '</p>');
-    styleDiv.append('<img class="singleImage" src="images/' + dish.image +'"' + '/>');
-    styleDiv.append('<p>' + dish.description  + '</p>');
-    
-    
-    const ingredDiv = container.find('.dishIngredients');
-    const quantDiv = container.find('.dishQuantity');
-    const priceDiv = container.find('.dishPrice');
+    dishInfo.append('<p class="dishName">' + dish.name + '</p>');
+    dishInfo.append('<img class="singleImage" src="images/' + dish.image +'"' + '/>');
+    dishInfo.append('<p>' + dish.description  + '</p>');
+
 
     dish.ingredients.forEach(function(item){
-        ingredDiv.append('<p>' + item.name + '</p>');
-        quantDiv.append('<p>' + item.quantity + item.unit + '</p>');
-        priceDiv.append('<p>' + 'SEK' + ' ' + item.price + '</p>');
-       
+        dishSpecs.append('<tr>');
+        dishSpecs.append('<td>' + item.name + '</td>');
+        dishSpecs.append('<td>' + item.quantity + item.unit + '</td>');
+        dishSpecs.append('<td>' + 'SEK' + ' ' + item.price + '</td>');
+        dishSpecs.append('<tr>');
     })
 
     

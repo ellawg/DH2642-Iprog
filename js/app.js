@@ -9,6 +9,8 @@ $(function() {
 
 	var dishSearch = new DishSearchView($(".dishSearchView"), model);
 
+	var dishDetails = new DishDetailsView($(".dishDetailsView"), model);
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
