@@ -1,4 +1,4 @@
-var DishDetailsView = function (container, model) {
+var DishOverviewView = function (container, model) {
 
     const menu = model.getFullMenu();
     console.log(menu);
