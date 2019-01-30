@@ -1,9 +1,5 @@
 /* INDEX */
 
-.container{
-    margin: 0 !important;
-}
-
 .is-center{
     align-items: center;
     justify-content: center;
@@ -126,9 +122,6 @@
 .dishSpecs > tr {
     width:5%;
     padding: 50px;
-    
-
-
 }
 .dishName{
     font-size: 24pt;
@@ -140,4 +133,16 @@
         flex-direction: column;
         margin: 20px;
     }
+}
+
+
+/* OVERVIEW */
+
+
+
+
+.menuList{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
