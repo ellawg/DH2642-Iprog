@@ -38,7 +38,6 @@ var DinnerModel = function() {
 		//TODO Lab 1
 		let allIngredients = [];
 		const fullMenu = this.getFullMenu();
-		console.log(fullMenu)
 		fullMenu.forEach(function (item) {
 			if (item !== undefined){
 				allIngredients = allIngredients.concat(item.ingredients);
@@ -56,7 +55,6 @@ var DinnerModel = function() {
 			totalPrice += item.price;
 		})
 		totalPrice = totalPrice * this.getNumberOfGuests();
-		console.log(totalPrice);
 		return totalPrice;
 	}
 
