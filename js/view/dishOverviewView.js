@@ -1,7 +1,6 @@
 var DishOverviewView = function (container, model) {
 
     const menu = model.getFullMenu();
-    console.log(menu);
 
     var $menuList = $("<div/>")  
                     .addClass("menuList");
