@@ -16,5 +16,5 @@ var DishOverviewView = function (container, model) {
             new DishItemView($(".menuList"), j, model);
         }
     });
-    container.append(model.getTotalMenuPrice(), ' SEK');
+    container.append('<hr/> <p class="price">' + model.getTotalMenuPrice() +  ' SEK </p>');
 }
