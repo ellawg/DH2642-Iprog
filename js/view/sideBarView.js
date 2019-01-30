@@ -8,6 +8,7 @@ var SideBarView = function (container, model) {
 
     model.addDishToMenu(1);
     model.addDishToMenu(200);
+    model.addDishToMenu(100);
 
     totalPrice.html("SEK " + model.getTotalMenuPrice());
 

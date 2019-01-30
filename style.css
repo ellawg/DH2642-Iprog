@@ -173,6 +173,11 @@
     align-content: center;
 }
 
+.dishPrice{
+    display: flex;
+    flex-direction: row;
+}
+
 
 /* PRINTOUT */
 .menuList{
@@ -190,3 +195,4 @@
     display: flex;
     flex-direction: row;
 }
+

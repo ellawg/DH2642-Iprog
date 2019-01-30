@@ -7,7 +7,4 @@ var DishItemView = function (container, dish, model) {
     $dishDiv.append('<img src="images/' + dish.image +'"' + '/>');
     $dishDiv.append('<p class="button" id="dishName">' + dish.name + '</p>');
 
-    $dishDiv.on('click', function () {
-        model.addDishToMenu(dish); 
-    })
 }
