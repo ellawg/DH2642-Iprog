@@ -4,72 +4,116 @@ var DinnerModel = function() {
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 
+	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null } };
 
-	this.setNumberOfGuests = function(num) {
+	this.setNumberOfGuests = function (num) {
 		//TODO Lab 1
+		data.numberOfGuests = num;
 	}
-	
-	this.getNumberOfGuests = function() {
+
+	this.getNumberOfGuests = function () {
 		//TODO Lab 1
+		return data.numberOfGuests;
 	}
 
 	//Returns the dish that is on the menu for selected type 
-	this.getSelectedDish = function(type) {
+	this.getSelectedDish = function (type) {
 		//TODO Lab 1
+		const dish = this.getDish(data.menu[type])
+		return dish;
 	}
 
 	//Returns all the dishes on the menu.
-	this.getFullMenu = function() {
+	this.getFullMenu = function () {
 		//TODO Lab 1
+		const starter = this.getSelectedDish('starter');
+		const main = this.getSelectedDish('main dish');
+		const dessert = this.getSelectedDish('dessert');
+		const menuList = [starter, main, dessert];
+		return menuList;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function() {
+	this.getAllIngredients = function () {
 		//TODO Lab 1
+		let allIngredients = [];
+		const fullMenu = this.getFullMenu();
+		fullMenu.forEach(function (item) {
+			if (item !== undefined){
+				allIngredients = allIngredients.concat(item.ingredients);
+			}
+		})
+		return allIngredients;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
+	this.getTotalMenuPrice = function () {
 		//TODO Lab 1
+		let totalPrice = 0.00;
+		const ingredients = this.getAllIngredients();
+		ingredients.forEach(function(item){
+			totalPrice += item.price;
+		})
+		totalPrice = totalPrice * this.getNumberOfGuests();
+		return totalPrice;
+	}
+
+	this.getTotalDishPrice = function (id) {
+		let totalDishPrice = 0;
+		const dish = this.getDish(id);
+		const ingredients = dish.ingredients;
+		ingredients.forEach(function(i){
+			totalDishPrice += i.price;
+		})
+		totalDishPrice = totalDishPrice * this.getNumberOfGuests();
+		return totalDishPrice;
+
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
-	this.addDishToMenu = function(id) {
-		//TODO Lab 1 
+	this.addDishToMenu = function (id) {
+		//TODO Lab 1
+		const type = this.getDish(id).type;
+		data.menu[type] = id;
 	}
 
 	//Removes dish from menu
-	this.removeDishFromMenu = function(id) {
+	this.removeDishFromMenu = function (id) {
 		//TODO Lab 1
+		const type = this.getDish(id).type;
+		data.menu[type] = null;
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-	this.getAllDishes = function (type,filter) {
-	  return dishes.filter(function(dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			dish.ingredients.forEach(function(ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
+	this.getAllDishes = function (type, filter) {
+		return dishes.filter(function (dish) {
+			var found = true;
+			if (filter) {
+				found = false;
+				dish.ingredients.forEach(function (ingredient) {
+					if (ingredient.name.indexOf(filter) != -1) {
+						found = true;
+					}
+				});
+				if (dish.name.indexOf(filter) != -1) {
 					found = true;
 				}
-			});
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
 			}
-		}
-	  	return dish.type == type && found;
-	  });	
+			return dish.type == type && found;
+		});
+	}
+
+	this.getEveryDish = function () {
+		return dishes;
 	}
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
+		for (key in dishes) {
+			if (dishes[key].id == id) {
 				return dishes[key];
 			}
 		}

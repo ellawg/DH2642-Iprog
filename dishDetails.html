@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dinner planner</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <h1 class="header column is-flex is-center">Dinner planner</h1>
+    <div class="container">
+        <div class="columns">
+            <!-- SIDEBAR -->
+            <div class="sideBarView column is-one-quarter">
+                <nav class="navbar column" role="navigation" aria-label="main navigation">
+                    <div class="navbar-brand">
+                        <h1>My Dinner</h1>
+                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                            data-target="navbarToggle">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+
+                    <div id="navbarToggle" class="navbar-menu">
+                        <div class="navbar-start">
+                            <div class="navbar-item">
+                                <div class="menu">
+                                    <div class="peopleBtns">
+                                        <div>People: <span id="numberOfGuests"></span></div>
+                                        <div class="guestBtns">
+                                            <button id="minusGuest" class="btn">
+                                                <i class="fas fa-angle-down"></i>
+                                            </button>
+                                            <button id="plusGuest" class="btn">
+                                                <i class="fas fa-angle-up"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <table class="dishTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Dish name</th>
+                                                <th>Cost</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="dishTableAppend">
+                                        </tbody>
+                                    </table>
+                                    <div><span id="totalPrice"></span></div>
+                                    <button class="button" disabled>Confirm dinner</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+
+            <!-- DISH DETAILS -->
+            <div class="dishDetailsView">
+                <div class="dishInfo column is-one-half"></div>
+                <div class="dishSpecs column">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+    <!-- The application JavaScript code -->
+    <script src="js/app.js"></script>
+    <script src="js/model/dinnerModel.js"></script>
+    <script src="js/view/sideBarView.js"></script>
+    <script src="js/view/dishSearchView.js"></script>
+    <script src="js/view/dishItemView.js"></script>
+    <script src="js/view/dishDetailsView.js"></script>
+    <script src="js/view/dishOverviewView.js"></script>
+    <script src="js/view/dinnerPrintoutView.js"></script>
+    <!-- TODO: Here you should include JS code for your other views -->
+</body>
+
+</html>

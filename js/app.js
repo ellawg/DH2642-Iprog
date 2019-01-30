@@ -3,7 +3,18 @@ $(function() {
 	var model = new DinnerModel();
 	
 	// And create the instance of ExampleView
-	var exampleView = new ExampleView($("#exampleView"));
+	//var exampleView = new ExampleView($("#exampleView"));
+
+	var sideBar = new SideBarView($(".sideBarView"), model);
+
+	var dishSearch = new DishSearchView($(".dishSearchView"), model);
+
+	var dishDetails = new DishDetailsView($(".dishDetailsView"), model);
+
+	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
+
+	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
