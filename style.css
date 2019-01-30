@@ -142,11 +142,14 @@
 
 .dishOverviewView{
     margin: 10px;
+    display: flex;
+    justify-content: center;
 }
 .menuList{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 20px;
     
 }
 
@@ -158,4 +161,14 @@
 #myDinner{
     padding: 20px;
     border-bottom: solid 2px;
+}
+
+#verticalLine{
+    transform: rotate(90deg);
+}
+
+.recipeBtn{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
