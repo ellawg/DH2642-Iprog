@@ -196,3 +196,15 @@
     flex-direction: row;
 }
 
+.dishRight{
+    display: flex;
+    flex: 2;
+}
+.dishLeft{
+    display: flex;
+    flex: 4;
+}
+
+.dishLeft p{
+    padding:20px;
+}

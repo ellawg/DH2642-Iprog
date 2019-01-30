@@ -8,12 +8,12 @@ var DinnerPrintoutView = function (container, model) {
     const rightLeft = container.find('.rightLeft');
     
     var dishRight = $("<div/>")  
-                    .addClass("dishRight");
+                    .addClass("dishRight column");
 
     rightLeft.append(dishRight);
 
     var dishLeft = $("<div/>")  
-                    .addClass("dishLeft");
+                    .addClass("dishLeft column");
 
     rightLeft.append(dishLeft);
     
