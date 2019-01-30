@@ -30,6 +30,12 @@
 }
 
 
+/* SIDE BAR */
+
+.sideBarView{
+    margin: 2%;
+}
+
 .guestBtns{
     width: 15%;
     display: flex;
@@ -39,6 +45,15 @@
 .menuLabels{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-item{
+    padding: 0px !important;
+}
+
+.menuLabels{
+    display: flex;
     justify-content: space-between;
 }
 
@@ -60,3 +75,13 @@
     height: 220px;
     flex-direction: column;
 }
+
+.dishSearchView{
+    margin: 2%;
+}
+
+.searchInput{
+    display: flex;
+    width: 20%;
+}
+
