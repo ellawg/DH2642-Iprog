@@ -8,11 +8,12 @@ var DishDetailsView = function (container, model) {
     dishInfo.append('<img class="singleImage" src="images/' + dish.image +'"' + '/>');
     dishInfo.append('<p>' + dish.description  + '</p>');
 
+    dishSpecs.append('Ingredients for ' + model.getNumberOfGuests() + ' people');
 
     dish.ingredients.forEach(function(item){
         dishSpecs.append('<tr>');
+        dishSpecs.append('<td>' + item.quantity + ' '+ item.unit + '</td>');
         dishSpecs.append('<td>' + item.name + '</td>');
-        dishSpecs.append('<td>' + item.quantity + item.unit + '</td>');
         dishSpecs.append('<td>' + 'SEK' + ' ' + item.price + '</td>');
         dishSpecs.append('<tr>');
     })

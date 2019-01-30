@@ -22,49 +22,52 @@
         <div class="columns">
             <!-- SIDEBAR -->
             <div class="sideBarView column is-one-quarter">
-                <nav class="navbar" role="navigation" aria-label="main navigation">
-                    <div class="navbar-brand">
-                        <h1>My Dinner</h1>
-                        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                            data-target="navbarToggle">
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                            <span aria-hidden="true"></span>
-                        </a>
-                    </div>
-
-                    <div id="navbarToggle" class="navbar-menu">
-                        <div class="navbar-start">
-                            <div class="navbar-item">
-                                <div class="menu">
-                                    <div>People: <span id="numberOfGuests"></span></div>
-                                    <div class="guestBtns">
-                                        <button id="minusGuest" class="btn">
-                                            <i class="fas fa-angle-down"></i>
-                                        </button>
-                                        <button id="plusGuest" class="btn">
-                                            <i class="fas fa-angle-up"></i>
-                                        </button>
+                    <nav class="navbar column" role="navigation" aria-label="main navigation">
+                        <div class="navbar-brand">
+                            <h1>My Dinner</h1>
+                            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                                data-target="navbarToggle">
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                            </a>
+                        </div>
+    
+                        <div id="navbarToggle" class="navbar-menu">
+                            <div class="navbar-start">
+                                <div class="navbar-item">
+                                    <div class="menu">
+                                        <div class="peopleBtns">
+                                            <div>People: <span id="numberOfGuests"></span></div>
+                                            <div class="guestBtns">
+                                                <button id="minusGuest" class="btn">
+                                                    <i class="fas fa-angle-down"></i>
+                                                </button>
+                                                <button id="plusGuest" class="btn">
+                                                    <i class="fas fa-angle-up"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <ul class="menuLabels">
+                                            <li>Dish name</li>
+                                            <li>Cost</li>
+                                        </ul>
+                                        <div><span id="totalPrice"></span></div>
+                                        <button class="button" disabled>Confirm dinner</button>
                                     </div>
-                                    <ul class="menuLabels">
-                                        <li>Dish name</li>
-                                        <li>Cost</li>
-                                    </ul>
-                                    <div><span id="totalPrice"></span></div>
-                                    <button class="button">Confirm dinner</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </nav>
-            </div>
-
+                    </nav>
+                </div>
+    
 
 
             <!-- DISH DETAILS -->
-            <div class="dishDetailsView column">
-                <div class="dishInfo column is-one-quarter"></div>
-                <div class="dishSpecs column"></div>
+            <div class="dishDetailsView">
+                <div class="dishInfo column is-one-half"></div>
+                <div class="dishSpecs column"> 
+                </div>
             </div>
         </div>
     </div>

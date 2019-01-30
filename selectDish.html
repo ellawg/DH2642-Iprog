@@ -37,21 +37,23 @@
                         <div class="navbar-start">
                             <div class="navbar-item">
                                 <div class="menu">
-                                    <div>People: <span id="numberOfGuests"></span></div>
-                                    <div class="guestBtns">
-                                        <button id="minusGuest" class="btn">
-                                            <i class="fas fa-angle-down"></i>
-                                        </button>
-                                        <button id="plusGuest" class="btn">
-                                            <i class="fas fa-angle-up"></i>
-                                        </button>
+                                    <div class="peopleBtns">
+                                        <div>People: <span id="numberOfGuests"></span></div>
+                                        <div class="guestBtns">
+                                            <button id="minusGuest" class="btn">
+                                                <i class="fas fa-angle-down"></i>
+                                            </button>
+                                            <button id="plusGuest" class="btn">
+                                                <i class="fas fa-angle-up"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                     <ul class="menuLabels">
                                         <li>Dish name</li>
                                         <li>Cost</li>
                                     </ul>
                                     <div><span id="totalPrice"></span></div>
-                                    <button class="button">Confirm dinner</button>
+                                    <button class="button" disabled>Confirm dinner</button>
                                 </div>
                             </div>
                         </div>
@@ -66,7 +68,7 @@
                 <h2>Find a dish</h2>
                 <!-- INPUT -->
                 <div class="findDish">
-                    <input class="searchInput" type="text" placeholder="Enter key words">
+                    <input class="searchInput input" type="text" placeholder="Enter key words">
                     <div class="select">
                         <select>
                             <option>All</option>
@@ -96,6 +98,7 @@
     <script src="js/view/dishSearchView.js"></script>
     <script src="js/view/dishItemView.js"></script>
     <script src="js/view/dishDetailsView.js"></script>
+    <script src="js/view/dishOverviewView.js"></script>
 
     <!-- TODO: Here you should include JS code for your other views -->
 </body>

@@ -7,7 +7,7 @@ var SideBarView = function (container, model) {
 
     model.addDishToMenu(1);
     model.addDishToMenu(200);
-    totalPrice.html(model.getTotalMenuPrice());
+    totalPrice.html("SEK " + model.getTotalMenuPrice());
 
     this.plusButton = container.find('#plusGuest');
     this.minusButton = container.find('#minusGuest');

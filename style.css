@@ -57,6 +57,12 @@
     justify-content: space-between;
 }
 
+#totalPrice{
+    display: flex;
+    justify-content: flex-end;
+    color: maroon;
+}
+
 /* SELECT DISH */
 
 .dishList {
@@ -71,7 +77,7 @@
     border: 2px solid #000;
     width: 20%;
     min-width: 170px;
-    max-width: 220px;
+    max-width: 170px;
     height: 220px;
     flex-direction: column;
 }
@@ -80,8 +86,58 @@
     margin: 2%;
 }
 
-.searchInput{
-    display: flex;
-    width: 20%;
+.input{
+    width: 20px;
 }
 
+
+.peopleBtns{
+    display: flex;
+    flex-direction: row;
+}
+
+.guestBtns{
+    flex-direction: column-reverse;
+}
+
+/* DISH DETAILS */
+
+.dishDetailsView{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.dishSpecs{
+    display: flex;
+    margin: 15px;
+    justify-content: stretch;
+    background: gold;
+}
+
+.dishSpecs > td {
+    align-content: space-evenly;
+    padding: 5%;
+    height: 100%;
+    width: 33%;    
+    
+}
+
+.dishSpecs > tr {
+    width:5%;
+    padding: 50px;
+    
+
+
+}
+.dishName{
+    font-size: 24pt;
+}
+@media (max-width: 960px){
+
+    .dishDetailsView{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+}
