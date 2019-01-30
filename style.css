@@ -172,3 +172,21 @@
     justify-content: center;
     align-content: center;
 }
+
+
+/* PRINTOUT */
+.menuList{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgName{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: space-around;
+}
+.rightLeft{
+    display: flex;
+    flex-direction: row;
+}

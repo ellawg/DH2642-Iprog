@@ -5,24 +5,29 @@ var DinnerPrintoutView = function (container, model) {
 
     const menu = model.getFullMenu();
 
+    const rightLeft = container.find('.rightLeft');
+    
     var dishRight = $("<div/>")  
                     .addClass("dishRight");
 
-    container.append(dishRight);
+    rightLeft.append(dishRight);
 
     var dishLeft = $("<div/>")  
                     .addClass("dishLeft");
 
-    container.append(dishLeft);
+    rightLeft.append(dishLeft);
     
     menu.forEach(function(dish){
         if (dish !== undefined){
-            dishRight.append('<img src="images/' + dish.image +'"' + '/>');
-            dishRight.append('<p>' + dish.name + '</p>');
+            var imgName = $("<div/>")  
+                    .addClass("imgName");
+            dishRight.append(imgName);
+            imgName.append('<img src="images/' + dish.image +'"' + '/>');
+            imgName.append('<p>' + dish.name + '</p>');
             dishLeft.append('<p>' + dish.description + '</p>');
 
         }
     })
 
-    container.append(model.getTotalMenuPrice(), ' SEK');
+    
 }
