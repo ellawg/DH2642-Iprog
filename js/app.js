@@ -13,6 +13,8 @@ $(function() {
 
 	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
 
+	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
+
 
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to

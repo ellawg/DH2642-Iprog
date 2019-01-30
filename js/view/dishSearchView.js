@@ -3,7 +3,7 @@ var DishSearchView = function (container, model) {
     const dishes = model.getEveryDish();
 
     var $dishList = $("<div/>")  
-                 .addClass("dishList");
+                    .addClass("dishList");
 
     container.append($dishList);
     
