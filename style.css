@@ -133,16 +133,34 @@
         flex-direction: column;
         margin: 20px;
     }
+    .findDish{
+        display: none;
+    }
 }
 
 
 /* OVERVIEW */
 
-
-
-
+.dishOverviewView{
+    margin: 10px;
+}
 .menuList{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
+}
+
+.price{
+    display: flex;
+    justify-content: flex-end;
+}
+
+hr{
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: flex-end;
+}
+.myDinner{
+    border-bottom: solid thick black;
 }
