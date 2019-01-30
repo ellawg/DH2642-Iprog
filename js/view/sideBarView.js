@@ -2,7 +2,7 @@ var SideBarView = function (container, model) {
 
     const numberOfGuests = container.find('#numberOfGuests');
     const totalPrice = container.find('#totalPrice');
-    const navbar = container.find('#navbarToggle');
+    const dishTable = container.find('.dishTableAppend');
 
     numberOfGuests.html(model.getNumberOfGuests());
 
@@ -10,23 +10,17 @@ var SideBarView = function (container, model) {
     model.addDishToMenu(200);
 
     totalPrice.html("SEK " + model.getTotalMenuPrice());
-    
+
     const fullMenu = model.getFullMenu();
 
-    var dishes = $("<div/>")  
-                    .addClass("dishes");
-
-    navbar.append(dishes);
-
     fullMenu.forEach(function(dish){
-        console.log(dish)
         if (dish !== undefined){
-            const name = dish.name
-            const price = ("SEK " + model.getTotalDishPrice(dish.id))
-            dishes.append('<tr>')
-            dishes.append('<td>' + name + '</td>');
-            dishes.append('<td>' + price + '</td>')
-            dishes.append('<tr>')
+            const name = dish.name;
+            const price = ("SEK " + model.getTotalDishPrice(dish.id));
+            dishTable.append('<tr>');
+            dishTable.append('<td>' + name + '</td>');
+            dishTable.append('<td>' + price + '</td>');
+            dishTable.append('</tr>');
         }
     })
 
