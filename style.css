@@ -39,9 +39,8 @@
 }
 
 .menuLabels{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+   
+    
 }
 
 .navbar-item{
@@ -156,11 +155,7 @@
     justify-content: flex-end;
 }
 
-hr{
-    transform: rotate(90deg);
-    display: flex;
-    justify-content: flex-end;
-}
-.myDinner{
-    border-bottom: solid thick black;
+#myDinner{
+    padding: 20px;
+    border-bottom: solid 2px;
 }
