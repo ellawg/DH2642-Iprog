@@ -1,5 +1,9 @@
 var DishOverviewView = function (container, model) {
 
+    const numberOfGuests = container.find('#numberOfGuests');
+
+    numberOfGuests.html(model.getNumberOfGuests());
+
     const menu = model.getFullMenu();
 
     var $menuList = $("<div/>")  
@@ -12,4 +16,5 @@ var DishOverviewView = function (container, model) {
             new DishItemView($(".menuList"), j, model);
         }
     });
+    container.append(model.getTotalMenuPrice(), ' SEK');
 }
