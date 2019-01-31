@@ -126,6 +126,11 @@
 .dishName{
     font-size: 24pt;
 }
+
+.dishList{
+    display: flex;
+    justify-content: center;
+}
 @media (max-width: 960px){
 
     .dishDetailsView{
