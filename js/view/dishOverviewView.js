@@ -20,8 +20,7 @@ var DishOverviewView = function (container, model) {
  
         if (j !== undefined) {
             menuList.append(dishPrice)
-            new DishItemView($(".dishPrice"), j, model);
-            dishPrice.append(model.getTotalDishPrice(j.id) + ' SEK');
+            new DishItemView($(".dishPrice"), j, model, true);
         }
     });
     container.append('<hr/> <p class="price">' + 'Total: ' + model.getTotalMenuPrice() + ' SEK </p>');

@@ -8,6 +8,6 @@ var DishSearchView = function (container, model) {
     container.append($dishList);
     
     dishes.forEach(function (j) {
-        new DishItemView($(".dishList"),j, model);
+        new DishItemView($(".dishList"),j, model, false);
     });
 }

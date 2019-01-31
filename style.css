@@ -68,13 +68,14 @@
 }
 
 .dish{
-    display: flex;
+    display: flex !important;
     border: 2px solid #000;
-    width: 20%;
-    min-width: 170px;
-    max-width: 170px;
+    min-width: 190px;
+    max-width: 190px;
     height: 220px;
     flex-direction: column;
+    margin: 20px;
+    text-align: center;
 }
 
 .dishSearchView{
@@ -124,6 +125,11 @@
 }
 .dishName{
     font-size: 24pt;
+}
+
+.dishList{
+    display: flex;
+    justify-content: center;
 }
 @media (max-width: 960px){
 
@@ -176,7 +182,10 @@
 .dishPrice{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
+
+
 
 
 /* PRINTOUT */
@@ -188,17 +197,26 @@
 .imgName{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 20px;
     justify-content: space-around;
+    
 }
-.rightLeft{
-    display: flex;
-    flex-direction: row;
+
+.description{
+    width:300px;
 }
+
+.printImg{
+    width:190px;
+    height:200px;
+}
+
 
 .dishRight{
     display: flex;
     flex: 2;
+    flex-wrap: wrap;
 }
 .dishLeft{
     display: flex;
