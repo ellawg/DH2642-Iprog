@@ -5,7 +5,7 @@ var DishItemView = function (container, dish, model, showPrice) {
 
     $(container).append(dishDiv);
     dishDiv.append('<img src="images/' + dish.image +'"' + '/>');
-    dishDiv.append('<p class="button" id="dishName">' + dish.name + '</p>');
+    dishDiv.append('<a class="button">' + dish.name + '</a>');
     if (showPrice == true ){
         dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish.id) + ' SEK</p>');
     }
