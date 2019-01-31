@@ -6,8 +6,9 @@
 }
 
 .header{
-    font-size: 1.5em;
-    background-color: lightslategray;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightgray;
     height: 20vh;
     width: 100vw;
     align-items: center;
@@ -38,9 +39,10 @@
     flex-direction: column;
 }
 
-.menuLabels{
-   
-    
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .navbar-item{
@@ -68,7 +70,6 @@
 }
 
 .dish{
-    display: flex !important;
     border: 2px solid #000;
     min-width: 190px;
     max-width: 190px;
@@ -78,13 +79,16 @@
     text-align: center;
 }
 
+.button{
+    white-space: normal !important;
+    height: 45px !important;
+    
+}
+
 .dishSearchView{
     margin: 2%;
 }
 
-.input{
-    width: 20px;
-}
 
 
 .peopleBtns{
@@ -122,9 +126,6 @@
 .dishSpecs > tr {
     width:5%;
     padding: 50px;
-}
-.dishName{
-    font-size: 24pt;
 }
 
 .dishList{
@@ -183,6 +184,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -212,17 +214,3 @@
     height:200px;
 }
 
-
-.dishRight{
-    display: flex;
-    flex: 2;
-    flex-wrap: wrap;
-}
-.dishLeft{
-    display: flex;
-    flex: 4;
-}
-
-.dishLeft p{
-    padding:20px;
-}
