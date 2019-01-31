@@ -1,14 +1,26 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
+
+	// Lab 2 
+
+	var observers=[];
+    this.addObserver = function(observer){ observers.push(observer); }
+   
+    this.notifyObservers = function(changeDetails){ 
+        for(var i=0; i<observers.length; i++)
+             observers[i](this, changeDetails); // we assume that observers[i] is a function, so we call it like observers[i](parameters)
+    }
+
+    this.removeObserver = function(observer){  /* remove observer from array */}
  
-	//TODO Lab 1 implement the data structure that will hold number of guest
-	// and selected dishes for the dinner menu
+	// Lab 1 
 
 	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null } };
 
 	this.setNumberOfGuests = function (num) {
 		//TODO Lab 1
 		data.numberOfGuests = num;
+		this.notifyObservers(numberOfGuests);
 	}
 
 	this.getNumberOfGuests = function () {

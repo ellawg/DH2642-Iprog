@@ -6,6 +6,7 @@ $(function() {
 	//var exampleView = new ExampleView($("#exampleView"));
 
 	var sideBar = new SideBarView($(".sideBarView"), model);
+	var sidebarController = new SideBarController(sideBar, model);
 
 	var dishSearch = new DishSearchView($(".dishSearchView"), model);
 
@@ -14,6 +15,7 @@ $(function() {
 	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
 
 	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
+
 
 
 	/**
