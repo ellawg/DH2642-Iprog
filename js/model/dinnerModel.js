@@ -19,6 +19,9 @@ var DinnerModel = function() {
 
 	this.setNumberOfGuests = function (num) {
 		//TODO Lab 1
+		if (num <= 0){
+			num = 0;
+		}
 		data.numberOfGuests = num;
 		this.notifyObservers(numberOfGuests);
 	}
