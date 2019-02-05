@@ -113,7 +113,7 @@
 }
 
 .dishSearchView{
-    margin: 30%;
+    margin: 35px;
     border-radius: 25px;
     background: white;
     padding:30px;
@@ -227,11 +227,11 @@
 }
 
 /* PRINTOUT */
-.menuList{
-    display: flex;
-    flex-direction: row;
+.rightLeft{
+    background: white;
+    margin: 10px;
+    border-radius: 25px;
 }
-
 .imgName{
     display: flex;
     flex-direction: row;
