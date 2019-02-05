@@ -10,6 +10,6 @@ var DishItemView = function (container, dish, model, showPrice, app) {
     if (showPrice == true ){
         dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish.id) + ' SEK</p>');
     }
-    new DishItemController(dishDiv, dish.id, app);
+    new DishItemController(dishDiv, dish.id, app, model);
 
 }

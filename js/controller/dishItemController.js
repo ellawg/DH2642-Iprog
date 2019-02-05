@@ -1,5 +1,7 @@
-var DishItemController = function(item, id, app){
+var DishItemController = function(item, id, app, model){
+    const self = this;
     item.click(function(){
-        app.showDishDetails(id);
+        model.setDishId(id);
+        app.initCtrl(self, app.dishDetailsController)
     })
 }

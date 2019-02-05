@@ -15,7 +15,17 @@ var DinnerModel = function () {
 
 	// Lab 1 
 
-	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null } };
+	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null }, dishId: 1 };
+
+	this.setDishId = function(id){
+		data.dishId = id
+		this.notifyObservers('dishDetailsId');
+
+	}
+
+	this.getDishId = function(){
+		return data.dishId;
+	}
 
 	this.setNumberOfGuests = function (num) {
 		//TODO Lab 1
