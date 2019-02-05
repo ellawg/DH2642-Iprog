@@ -1,0 +1,4 @@
+var DishSearchController = function () {
+
+
+}

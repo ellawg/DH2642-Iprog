@@ -5,18 +5,18 @@ $(function() {
 	// And create the instance of ExampleView
 	//var exampleView = new ExampleView($("#exampleView"));
 
+	var appController = new AppController();
+
+    // VIEWS
 	var sideBar = new SideBarView($(".sideBarView"), model);
-	var sidebarController = new SideBarController(sideBar, model);
-
 	var dishSearch = new DishSearchView($(".dishSearchView"), model);
-
 	var dishDetails = new DishDetailsView($(".dishDetailsView"), model);
-	//var dishDetailsController = new DishDetailsController($(dishDetails), model);
-
 	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
-
 	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
 
+	// CONTROLLERS
+	var sideBarController = new SideBarController(sideBar, model, appController);
+	var dishSearchController = new DishSearchController(dishSearch, model, appController);
 
 
 	/**

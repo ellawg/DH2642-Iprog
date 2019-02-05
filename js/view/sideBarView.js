@@ -35,23 +35,11 @@ var SideBarView = function (container, model) {
     this.update = function (model, changeDetails) {
         // redraw just the portion affected by the changeDetails
         // or remove all graphics in the view, read the whole model and redraw
-        updates();
+        if (changeDetails == 'numberOfGuests'){
+            updates();
+        }
+        
     }
     model.addObserver(this.update);
-
-    // BUTTONS
-
-
-    $(document).ready(function () {
-
-        // Check for click events on the navbar burger icon
-        $(".navbar-burger").click(function () {
-
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            $(".navbar-burger").toggleClass("is-active");
-            $(".navbar-menu").toggleClass("is-active");
-
-        });
-    });
 
 }

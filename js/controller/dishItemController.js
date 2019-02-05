@@ -1,6 +1,5 @@
-var DishItemController = function(this, dish, app){
-    this.click(function(){
-        app.showDetails(dish.id)
+var DishItemController = function(item, id, app){
+    item.click(function(){
+        app.showDishDetails(id);
     })
-
 }

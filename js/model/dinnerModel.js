@@ -23,7 +23,7 @@ var DinnerModel = function() {
 			num = 0;
 		}
 		data.numberOfGuests = num;
-		this.notifyObservers(numberOfGuests);
+		this.notifyObservers('numberOfGuests');
 	}
 
 	this.getNumberOfGuests = function () {
