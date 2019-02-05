@@ -1,4 +1,5 @@
 var DishItemView = function (container, dish, model, showPrice) {
+    new DishItemController(this, dish, app);
     var dishDiv = $("<div/>")  
                  .addClass("dish")
                  .addClass("column");

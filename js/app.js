@@ -11,6 +11,7 @@ $(function() {
 	var dishSearch = new DishSearchView($(".dishSearchView"), model);
 
 	var dishDetails = new DishDetailsView($(".dishDetailsView"), model);
+	//var dishDetailsController = new DishDetailsController($(dishDetails), model);
 
 	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
 
