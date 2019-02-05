@@ -1,5 +1,6 @@
-var DishSearchController = function () {
+var DishSearchController = function (model) {
     
+
 
 
 }
