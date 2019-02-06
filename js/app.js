@@ -5,7 +5,7 @@ $(function() {
 	// And create the instance of ExampleView
 	//var exampleView = new ExampleView($("#exampleView"));
 
-	var appController = new AppController();
+	var appController = new AppController(model);
 
 
 	/**

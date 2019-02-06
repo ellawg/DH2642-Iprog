@@ -13,11 +13,4 @@ var DishSearchController = function (view, model, app) {
         });
     })
 
-
-
-
-    
-
-
-
 }

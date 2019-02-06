@@ -7,10 +7,16 @@ var DishSearchView = function (container, model, app) {
 
     this.searchBtn = container.find('#searchBtn');
 
-    this.dishList = $("<div/>")
-        .addClass("dishList");
+    this.dishList = $("<div/>").addClass("dishList");
 
     container.append(this.dishList);
+
+    this.showView = function () {
+        container.show();
+    }
+    this.hideView = function () {
+        container.hide();
+    }
 
 
 }
