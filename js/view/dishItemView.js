@@ -1,4 +1,4 @@
-var DishItemView = function (container, dish, model, showPrice, app) {
+var DishItemView = function (view, container, dish, model, showPrice, app) {
     
     var dishDiv = $("<div/>")  
                  .addClass("dish")
@@ -10,6 +10,6 @@ var DishItemView = function (container, dish, model, showPrice, app) {
     if (showPrice == true ){
         dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish.id) + ' SEK</p>');
     }
-    new DishItemController(dishDiv, dish.id, app, model);
+    new DishItemController(view, dishDiv, app, dish.id, model);
 
 }

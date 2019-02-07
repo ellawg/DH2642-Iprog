@@ -18,9 +18,8 @@ var DinnerModel = function () {
 	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null }, dishId: 1 };
 
 	this.setDishId = function(id){
-		data.dishId = id
+		data.dishId = id;
 		this.notifyObservers('dishDetailsId');
-
 	}
 
 	this.getDishId = function(){

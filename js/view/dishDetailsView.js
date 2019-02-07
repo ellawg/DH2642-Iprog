@@ -4,6 +4,8 @@ var DishDetailsView = function (container, model) {
     const dishSpecs = container.find('.dishSpecs');
 
     var updates = function () {
+        dishSpecs.empty();
+        dishInfo.empty();
         const id = model.getDishId();
         const dish = model.getDish(id);
         const numberOfGuests = model.getNumberOfGuests();

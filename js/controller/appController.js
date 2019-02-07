@@ -3,7 +3,7 @@ var AppController = function (model) {
 	this.sideBarView = new SideBarView($(".sideBarView"), model);
 	this.welcomeView = new WelcomeView($(".welcomeView"), model);
 	this.dishSearchView = new DishSearchView($(".dishSearchView"), model);
-	var dishDetails = new DishDetailsView($(".dishDetailsView"), model);
+	this.dishDetailsView = new DishDetailsView($(".dishDetailsView"), model);
 	var dishOverview = new DishOverviewView($(".dishOverviewView"), model);
 	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
 
@@ -14,6 +14,7 @@ var AppController = function (model) {
 
 	this.dishSearchView.hideView();
 	this.sideBarView.hideView();
+	this.dishDetailsView.hideView();
 
 	// STATE CONTROLLER
 	// triggered by controller
