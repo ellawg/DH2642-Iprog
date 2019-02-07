@@ -145,14 +145,14 @@
     margin: 20px;
 }
 
-.dishSpecs{
+.specs{
     display: flex;
     margin: 15px;
     justify-content: stretch;
     background: gold;
 }
 
-.dishSpecs > td {
+.specs > td {
     align-content: space-evenly;
     padding: 5%;
     height: 100%;
@@ -160,7 +160,7 @@
     
 }
 
-.dishSpecs > tr {
+.specs > tr {
     width:5%;
     padding: 50px;
 }

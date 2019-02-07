@@ -2,9 +2,10 @@ var DishDetailsView = function (container, model) {
 
     const dishInfo = container.find('.dishInfo');
     const dishSpecs = container.find('.dishSpecs');
+    const specs = container.find('.specs');
 
     var updates = () => {
-        dishSpecs.empty();
+        specs.empty();
         dishInfo.empty();
 
         this.id = model.getDishId();
@@ -16,19 +17,19 @@ var DishDetailsView = function (container, model) {
         dishInfo.append('<img class="singleImage" src="images/' + this.dish.image + '"' + '/>');
         dishInfo.append('<p>' + this.dish.description + '</p>');
 
-        dishSpecs.append('Ingredients for ' + numberOfGuests + ' people');
+        specs.append('Ingredients for ' + numberOfGuests + ' people');
 
         this.dish.ingredients.forEach(function (item) {
-            dishSpecs.append('<tr>');
-            dishSpecs.append('<td>' + item.quantity * numberOfGuests + ' ' + item.unit + '</td>');
-            dishSpecs.append('<td>' + item.name + '</td>');
-            dishSpecs.append('<td>' + 'SEK' + ' ' + item.price * numberOfGuests + '</td>');
-            dishSpecs.append('<tr>');
+            specs.append('<tr>');
+            specs.append('<td>' + item.quantity * numberOfGuests + ' ' + item.unit + '</td>');
+            specs.append('<td>' + item.name + '</td>');
+            specs.append('<td>' + 'SEK' + ' ' + item.price * numberOfGuests + '</td>');
+            specs.append('<tr>');
         })   
     }
 
     this.addButton = $("<button/>").addClass("button").attr('id', 'addToMenu').html('Add to menu');
-    container.append(this.addButton);
+    dishSpecs.append(this.addButton);
 
 
     updates();
