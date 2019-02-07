@@ -17,6 +17,4 @@ var DishSearchView = function (container, model, app) {
     this.hideView = function () {
         container.hide();
     }
-
-
 }

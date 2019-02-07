@@ -7,9 +7,10 @@ var SideBarView = function (container, model) {
     this.plusButton = container.find('#plusGuest');
     this.minusButton = container.find('#minusGuest');
 
-    model.addDishToMenu(1);
-    model.addDishToMenu(200);
-    model.addDishToMenu(100);
+    const peopleBtns = container.find('.peopleBtns');
+
+    peopleBtns.append('<div>People: <span id="numberOfGuests"></span></div>');
+    peopleBtns.append('<div class="guestBtns"><button id="minusGuest" class="btn"><i class="fas fa-angle-down"></i></button><button id="plusGuest" class="btn"><i class="fas fa-angle-up"></i></button></div>');
 
     var updates = function () {
         dishTable.empty();

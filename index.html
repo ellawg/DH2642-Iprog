@@ -21,6 +21,44 @@
     <!-- WELCOME VIEW -->
     <div class="welcomeView column is-center">
     </div>
+    <div class="sideBarView column is-one-quarter">
+      <nav class="navbar column" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+              <h1>My Dinner</h1>
+              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                  data-target="navbarToggle">
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+                  <span aria-hidden="true"></span>
+              </a>
+          </div>
+
+          <div id="navbarToggle" class="navbar-menu">
+              <div class="navbar-start">
+                  <div class="navbar-item">
+                      <div class="menu">
+                          <div class="peopleBtns">
+                             
+                          </div>
+                          <table class="dishTable">
+                              <thead>
+                                  <tr>
+                                      <th>Dish name</th>
+                                      <th>Cost</th>
+                                  </tr>
+                              </thead>
+                              <tbody class="dishTableAppend">
+
+                              </tbody>
+                          </table>
+                          <div><span id="totalPrice"></span></div>
+                          <button class="button" disabled>Confirm dinner</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </nav>
+  </div>
     <!-- DISH SEARCH -->
     <div class="dishSearchView column">
       <!-- INPUT -->
