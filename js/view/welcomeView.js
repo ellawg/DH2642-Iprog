@@ -3,6 +3,7 @@ var WelcomeView = function (container, model) {
 
     this.button = $("<button/>")
         .addClass("button")
+        .attr('id', 'welcomeButton')
         .html('Create new element');
 
     container.append(this.button);

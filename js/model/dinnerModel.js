@@ -100,6 +100,7 @@ var DinnerModel = function () {
 		//TODO Lab 1
 		const type = this.getDish(id).type;
 		data.menu[type] = id;
+		this.notifyObservers('addDishToMenu');
 	}
 
 	//Removes dish from menu

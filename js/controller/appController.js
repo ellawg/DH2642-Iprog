@@ -11,6 +11,7 @@ var AppController = function (model) {
 	var sideBarController = new SideBarController(this.sideBarView, model, this);
 	var welcomeController = new WelcomeController(this.welcomeView, model, this);
 	var dishSearchController = new DishSearchController(this.dishSearchView, model, this);
+	var dishDetailsController = new DishDetailsController(this.dishDetailsView, model, this);
 
 	this.dishSearchView.hideView();
 	this.sideBarView.hideView();

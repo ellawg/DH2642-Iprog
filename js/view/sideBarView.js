@@ -1,5 +1,10 @@
 var SideBarView = function (container, model) {
 
+    const peopleBtns = container.find('.peopleBtns');
+
+    peopleBtns.append('<div>People: <span id="numberOfGuests"></span></div>');
+    peopleBtns.append('<div class="guestBtns"><button id="minusGuest" class="btn"><i class="fas fa-angle-down"></i></button><button id="plusGuest" class="btn"><i class="fas fa-angle-up"></i></button></div>');
+
     const numberOfGuests = container.find('#numberOfGuests');
     const totalPrice = container.find('#totalPrice');
     const dishTable = container.find('.dishTableAppend');
@@ -7,21 +12,19 @@ var SideBarView = function (container, model) {
     this.plusButton = container.find('#plusGuest');
     this.minusButton = container.find('#minusGuest');
 
-    const peopleBtns = container.find('.peopleBtns');
-
-    peopleBtns.append('<div>People: <span id="numberOfGuests"></span></div>');
-    peopleBtns.append('<div class="guestBtns"><button id="minusGuest" class="btn"><i class="fas fa-angle-down"></i></button><button id="plusGuest" class="btn"><i class="fas fa-angle-up"></i></button></div>');
-
     var updates = function () {
         dishTable.empty();
         numberOfGuests.html(model.getNumberOfGuests());
 
         totalPrice.html("SEK " + model.getTotalMenuPrice());
 
+       
+
         const fullMenu = model.getFullMenu();
 
         fullMenu.forEach(function (dish) {
             if (dish !== undefined) {
+                console.log(dish.name)
                 const name = dish.name;
                 const price = ("SEK " + model.getTotalDishPrice(dish.id));
                 dishTable.append('<tr>');
@@ -39,7 +42,9 @@ var SideBarView = function (container, model) {
         if (changeDetails == 'numberOfGuests'){
             updates();
         }
-        
+        if (changeDetails == 'addDishToMenu'){
+            updates();
+        }
     }
     model.addObserver(this.update);
 
