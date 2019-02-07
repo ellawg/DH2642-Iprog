@@ -43,4 +43,11 @@ var SideBarView = function (container, model) {
     }
     model.addObserver(this.update);
 
+    this.showView = function () {
+        container.show();
+    }
+    this.hideView = function () {
+        container.hide();
+    }
+
 }

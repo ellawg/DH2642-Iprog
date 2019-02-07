@@ -13,7 +13,7 @@ var AppController = function (model) {
 	var dishSearchController = new DishSearchController(this.dishSearchView, model, this);
 
 	this.dishSearchView.hideView();
-
+	this.sideBarView.hideView();
 
 	// STATE CONTROLLER
 	// triggered by controller
