@@ -28,6 +28,9 @@ var DishDetailsView = function (container, model) {
         })   
     }
 
+    this.backButton = $("<button/>").addClass("button").attr('id', 'backToSearch').html('Back to search');
+    dishSpecs.append(this.backButton);
+
     this.addButton = $("<button/>").addClass("button").attr('id', 'addToMenu').html('Add to menu');
     dishSpecs.append(this.addButton);
 
@@ -35,7 +38,6 @@ var DishDetailsView = function (container, model) {
     updates();
 
     
-
 
     this.update = function (model, changeDetails) {
         if (changeDetails == 'dishDetailsId') {
