@@ -1,7 +1,8 @@
 var SideBarController = function (view, model, app) {
     view.confirmButton.on('click', function(){
-        app.stateController(view, app.dishOverviewView);
         app.stateController(app.dishDetailsView, app.dishOverviewView);
+        app.stateController(app.dishSearchView, app.dishOverviewView);
+        app.stateController(view, app.dishOverviewView);    
     })
 
     view.plusButton.on('click', function () {

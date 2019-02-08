@@ -4,7 +4,7 @@ var DishItemView = function (view, container, dish, model, showPrice, app) {
                  .addClass("dish")
                  .addClass("column box");
 
-    $(container).append(dishDiv);
+    container.append(dishDiv);
     dishDiv.append('<img src="images/' + dish.image +'"' + '/>');
     dishDiv.append('<a class="dishName">' + dish.name + '</a>');
     if (showPrice == true ){

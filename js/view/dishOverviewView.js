@@ -1,4 +1,4 @@
-var DishOverviewView = function (container, model) {
+var DishOverviewView = function (container, model, app) {
 
     const numberOfGuests = container.find('#numberOfGuests');
 
@@ -9,12 +9,13 @@ var DishOverviewView = function (container, model) {
     var updates = function () {
         const menu = model.getFullMenu();
         numberOfGuests.html(model.getNumberOfGuests());
+        menuList.empty();
+        dishPrice.empty();
 
         menu.forEach(function (j) {
-            menuList.empty();
             if (j !== undefined) {
                 menuList.append(dishPrice);
-                //new DishItemView($(".dishPrice"), j, model, true);
+                new DishItemView(this, $(".dishPrice"), j, model, true, app);
             }
         });
         menuList.append('<hr/> <p class="price">' + 'Total: ' + model.getTotalMenuPrice() + ' SEK </p>');

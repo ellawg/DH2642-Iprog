@@ -4,7 +4,7 @@ var AppController = function (model) {
 	this.welcomeView = new WelcomeView($(".welcomeView"), model);
 	this.dishSearchView = new DishSearchView($(".dishSearchView"), model);
 	this.dishDetailsView = new DishDetailsView($(".dishDetailsView"), model);
-	this.dishOverviewView = new DishOverviewView($(".dishOverviewView"), model);
+	this.dishOverviewView = new DishOverviewView($(".dishOverviewView"), model, this);
 	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
 
 	// CONTROLLERS
