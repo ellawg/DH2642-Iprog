@@ -18,13 +18,10 @@ var SideBarView = function (container, model) {
 
         totalPrice.html("SEK " + model.getTotalMenuPrice());
 
-       
-
         const fullMenu = model.getFullMenu();
 
         fullMenu.forEach(function (dish) {
             if (dish !== undefined) {
-                console.log(dish.name)
                 const name = dish.name;
                 const price = ("SEK " + model.getTotalDishPrice(dish.id));
                 dishTable.append('<tr>');
@@ -35,6 +32,10 @@ var SideBarView = function (container, model) {
         })
     }
     updates();
+
+    const menu = container.find('.menu');
+    this.confirmButton =  $("<button/>").addClass("button").attr('id', 'confirmDinnerBtn').html('Confirm dinner');
+    menu.append(this.confirmButton);
 
     this.update = function (model, changeDetails) {
         // redraw just the portion affected by the changeDetails

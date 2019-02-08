@@ -1,4 +1,8 @@
-var SideBarController = function (view, model) {
+var SideBarController = function (view, model, app) {
+    view.confirmButton.on('click', function(){
+        app.stateController(view, app.dishOverviewView);
+        app.stateController(app.dishDetailsView, app.dishOverviewView);
+    })
 
     view.plusButton.on('click', function () {
         const newNumberOfGuest = model.getNumberOfGuests() + 1;
@@ -9,6 +13,7 @@ var SideBarController = function (view, model) {
         const newNumberOfGuest = model.getNumberOfGuests() - 1;
         model.setNumberOfGuests(newNumberOfGuest);
     })
+
 
     // BULMA BUTTON TOGGLE
     $(document).ready(function () {

@@ -18,7 +18,6 @@ var DishSearchController = function (view, model, app) {
         if (dishes.length == 0) {
             view.dishList.append('<p>Could not find any dishes</p>')
         }
-        console.log(dishes)
         getDishItems(dishes);
     })
 }

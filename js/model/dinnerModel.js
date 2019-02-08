@@ -10,9 +10,7 @@ var DinnerModel = function () {
 		for (var i = 0; i < observers.length; i++)
 			observers[i](this, changeDetails); // we assume that observers[i] is a function, so we call it like observers[i](parameters)
 	}
-
 	this.removeObserver = function (observer) {  /* remove observer from array */ }
-
 	// Lab 1 
 
 	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null }, dishId: 1 };
