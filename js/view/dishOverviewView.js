@@ -1,7 +1,5 @@
 var DishOverviewView = function (container, model, app) {
 
-    const numberOfGuests = container.find('#numberOfGuests');
-
     var menuList = $("<div/>").addClass("menuList");
     var dishPrice = $("<div/>").addClass("dishPrice");
     container.append(menuList);
@@ -10,7 +8,6 @@ var DishOverviewView = function (container, model, app) {
 
     var updates = () => {
         const menu = model.getFullMenu();
-        numberOfGuests.html(model.getNumberOfGuests());
         menuList.empty();
         dishPrice.empty();
 
