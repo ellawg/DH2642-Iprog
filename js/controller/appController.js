@@ -5,7 +5,7 @@ var AppController = function (model) {
 	this.dishSearchView = new DishSearchView($(".dishSearchView"), model);
 	this.dishDetailsView = new DishDetailsView($(".dishDetailsView"), model);
 	this.dishOverviewView = new DishOverviewView($(".dishOverviewView"), model, this);
-	var dinnerPrintout = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
+	this.dinnerPrintoutView = new DinnerPrintoutView($(".dinnerPrintoutView"), model);
 
 	// CONTROLLERS
 	var sideBarController = new SideBarController(this.sideBarView, model, this);
@@ -13,11 +13,13 @@ var AppController = function (model) {
 	var dishSearchController = new DishSearchController(this.dishSearchView, model, this);
 	var dishDetailsController = new DishDetailsController(this.dishDetailsView, model, this);
 	var dishOverviewController = new DishOverviewController(this.dishOverviewView, model, this);
+	var dinnerPrintoutController = new DinnerPrintoutController(this.dinnerPrintoutView, model, this);
 
 	this.dishSearchView.hideView();
 	this.sideBarView.hideView();
 	this.dishDetailsView.hideView();
 	this.dishOverviewView.hideView();
+	this.dinnerPrintoutView.hideView();
 
 	// STATE CONTROLLER
 	// triggered by controller

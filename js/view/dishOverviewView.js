@@ -3,10 +3,12 @@ var DishOverviewView = function (container, model, app) {
     const numberOfGuests = container.find('#numberOfGuests');
 
     var menuList = $("<div/>").addClass("menuList");
-    container.append(menuList);
     var dishPrice = $("<div/>").addClass("dishPrice");
+    container.append(menuList);
 
-    var updates = function () {
+    this.printButton =  $("<button/>").addClass("button").attr('id', 'printMenuButton').html('Print full menu');
+
+    var updates = () => {
         const menu = model.getFullMenu();
         numberOfGuests.html(model.getNumberOfGuests());
         menuList.empty();
@@ -19,7 +21,7 @@ var DishOverviewView = function (container, model, app) {
             }
         });
         menuList.append('<hr/> <p class="price">' + 'Total: ' + model.getTotalMenuPrice() + ' SEK </p>');
-        menuList.append('<button class="button recipeBtn"> Print Full Recipe </button>');
+        container.append(this.printButton);
     }
     updates();
 
