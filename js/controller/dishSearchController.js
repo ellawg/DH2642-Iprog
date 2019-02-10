@@ -10,7 +10,8 @@ var DishSearchController = function (view, model, app) {
     }
     getDishItems(firstDishes);
     
-    view.searchBtn.on('click', function () {
+    view.searchBtn.on('click', function (e) {
+        e.preventDefault();
         view.dishList.empty();
         const typeVal = document.getElementById('typeOption').value;
         const inputVal = document.getElementById('searchInput').value;
