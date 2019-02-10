@@ -19,6 +19,8 @@
 
 .welcomeView{
     height: 80vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
@@ -29,7 +31,9 @@
 }
 
 .container-fluid{
-    background: whitesmoke;
+    background: whitesmoke; 
+    height: 100%;
+    min-height: 100%;
 }
 
 /* SIDE BAR */
@@ -37,7 +41,6 @@
 .sideBarView{
     margin: 2%;
     background: whitesmoke;
-    
 }
 
 .guestBtns{
@@ -50,6 +53,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
     
 }
 
@@ -70,18 +74,22 @@
 }
 
 #navbarToggle {
-    width:100%;
-    
-    
+    width:100%;  
 }
 .dishTable td{
     padding-right: 10px;
     
 }
+.navbar-item{
+    width:100%;
+}
 
 .navbar{
     border-radius: 25px;
     padding: 20px;
+}
+.navbar-start {
+    width: 100%;
 }
 
 .navbar *{
@@ -113,11 +121,11 @@
 }
 
 .dishSearchView{
+    height: 100%;
     margin: 35px;
     border-radius: 25px;
     background: white;
     padding:30px;
-    
 }
 
 .peopleBtns{
@@ -130,11 +138,14 @@
 }
 
 .findDish{
-    margin:10px;
+    margin:20px;
+}
+.findDish .searchTitle{
+    margin-bottom:20px;
 }
 
 .findDish input{
-    width: 40%;
+    width: 60%;
 }
 
 /* DISH DETAILS */
@@ -142,39 +153,55 @@
 .dishDetailsView{
     display: flex;
     flex-direction: row;
-    margin: 20px;
+    margin: 30px;
+    padding: 20px;
+    height: 100%;
+    background: white;
+    border-radius: 25px;
 }
 
 .specs{
     display: flex;
-    margin: 15px;
-    justify-content: stretch;
+    padding: 20px;
+    justify-content: center;
     background: gold;
+    border-radius: 25px;
 }
 
 .specs > td {
-    align-content: space-evenly;
-    padding: 5%;
-    height: 100%;
-    width: 33%;    
-    
+    padding: 10px;
+    height: 100%;       
 }
 
 .specs > tr {
     width:5%;
-    padding: 50px;
+    padding: 30px;
 }
 
 .dishList{
     display: flex;
     justify-content: center;
 }
+
+.dishInfo *{
+    padding-bottom: 20px;
+}
+
+.dishInfo img{
+    width: 200px;
+    height: auto;
+}
+
 @media (max-width: 960px){
 
     .dishDetailsView{
         display: flex;
         flex-direction: column;
         margin: 20px;
+        padding: 20px;
+        height: 100%;
+        background: white;
+        border-radius: 25px;
     }
     .findDish{
         display: none;
@@ -185,13 +212,17 @@
 /* OVERVIEW */
 
 .dishOverviewView{
+    height: 80vh;
     margin: 10px;
     display: flex;
     justify-content: center;
+
 }
+
+
 .menuList{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     padding: 20px;
     background: white;
@@ -204,10 +235,6 @@
     justify-content: flex-end;
 }
 
-#myDinner{
-    padding: 20px;
-    border-bottom: solid 2px;
-}
 
 #verticalLine{
     transform: rotate(90deg);
@@ -227,6 +254,10 @@
 }
 
 /* PRINTOUT */
+
+.dinnerPrintoutView{
+    height: 100%;
+}
 .rightLeft{
     background: white;
     margin: 10px;
@@ -250,3 +281,12 @@
     height:200px;
 }
 
+/* OVERVIEW HEADER */
+
+.headerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid lightgray 1px;
+    padding: 20px;
+}

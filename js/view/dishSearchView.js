@@ -1,6 +1,38 @@
 var DishSearchView = function (container, model, app) {
     const findDish = container.find('.findDish');
-    findDish.append('<h2>Find a dish</h2>');
+    const searchTitle = container.find('.searchTitle')
+
+    var updates = function(){
+        const menu = model.getFullMenu();
+
+        function isUndefined(foodItem){
+            if (foodItem == undefined){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        
+        if (menu.every(isUndefined) == true){
+            searchTitle.empty();
+            searchTitle.append('<h2>Find a dish</h2>');
+        }
+        else{
+            searchTitle.empty();
+            searchTitle.append('<h2>Add another one </h2>');
+        }
+        
+    }   
+    updates();
+
+    this.update = function (model, changeDetails) {
+        if (changeDetails == 'addDishToMenu'){
+            updates();
+        }
+    }
+    
+    model.addObserver(this.update);
 
     const findDishForm = container.find('.findDishForm');
     findDishForm.append('<input class="input" id="searchInput" type="text" placeholder="Enter key words" value=""></input>');
