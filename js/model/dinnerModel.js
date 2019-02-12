@@ -75,9 +75,10 @@ var DinnerModel = function () {
 		//TODO Lab 1
 		let totalPrice = 0.00;
 		const ingredients = this.getAllIngredients();
-		ingredients.forEach(function (item) {
-			totalPrice += item.price;
-		})
+		for (i=0; i<ingredients.length; i++){
+			i += 1
+		}
+		totalPrice = totalPrice + i;
 		totalPrice = totalPrice * this.getNumberOfGuests();
 		return totalPrice;
 	}
@@ -85,10 +86,11 @@ var DinnerModel = function () {
 	this.getTotalDishPrice = function (id) {
 		let totalDishPrice = 0;
 		const dish = this.getDish(id);
-		const ingredients = dish.ingredients;
-		ingredients.forEach(function (i) {
-			totalDishPrice += i.price;
-		})
+		const ingredients = dish.extendedIngredients.name;
+		for (i=0; i<ingredients.length; i++){
+			i += 1
+		}
+		totalDishPrice = totalDishPrice + i;
 		totalDishPrice = totalDishPrice * this.getNumberOfGuests();
 		return totalDishPrice;
 
@@ -119,34 +121,9 @@ var DinnerModel = function () {
 				'X-RapidAPI-Key': API_KEY
 			}
 		}).then(response => response.json())
-		  .then(data => data.results)
+			.then(data => data.results)
 	}
 	console.log(this.getAllDishes('starter', 'egg'))
-	/* 
-		this.getAllDishes = function (type, filter) {
-	
-	
-			return dishes.filter(function (dish) {
-				var found = true;
-				if (filter) {
-					found = false;
-					dish.ingredients.forEach(function (ingredient) {
-						if (ingredient.name.toLowerCase().indexOf(filter) != -1) {
-							found = true;
-						}
-					});
-					if (dish.name.toLowerCase().indexOf(filter) != -1) {
-						found = true;
-					}
-				}
-				if (type == 'all') {
-					return found;
-				}
-				else {
-					return dish.type == type && found;
-				}
-			});
-		} */
 
 	this.getEveryDish = function () {
 		return dishes;
@@ -154,11 +131,12 @@ var DinnerModel = function () {
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
-		for (key in dishes) {
-			if (dishes[key].id == id) {
-				return dishes[key];
+		return fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/'+ id +'/information', {
+			headers: {
+				'X-RapidAPI-Key': API_KEY
 			}
-		}
+		}).then(response => response.json())
+			.then(data => data.results)
 	}
 
 

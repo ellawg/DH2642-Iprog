@@ -14,7 +14,7 @@ var DishDetailsView = function (container, model) {
 
         const numberOfGuests = model.getNumberOfGuests();
 
-        dishInfo.append('<h1 class="dishName">' + this.dish.name + '</h1>');
+        dishInfo.append('<h1 class="dishName">' + this.dish.title + '</h1>');
         dishInfo.append('<img class="singleImage" src="images/' + this.dish.image + '"' + '/>');
         dishInfo.append('<p>' + this.dish.description + '</p>');
         
@@ -24,7 +24,7 @@ var DishDetailsView = function (container, model) {
         this.dish.ingredients.forEach(function (item) {
             specs.append('<tr>');
             specs.append('<td>' + Math.ceil(item.quantity) * numberOfGuests + ' ' + item.unit + '</td>');
-            specs.append('<td>' + item.name + '</td>');
+            specs.append('<td>' + item.title + '</td>');
             specs.append('<td>' + 'SEK' + ' ' + item.price * numberOfGuests + '</td>');
             specs.append('<tr>');
         })   
