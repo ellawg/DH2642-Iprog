@@ -1,15 +1,12 @@
 var DishSearchController = function (view, model, app) {
-
-    const firstDishes = model.getAllDishes('all');
-    // Function getDishItem that loops though a list and creates dish items
-    function getDishItems(list){
-        list.forEach(function (dish) {
+    model.getAllDishes('starter', 'egg').then(dishes => {
+        dishes.forEach(function (dish) {
             new DishItemView(view, $(".dishList"), dish, model, false, app);
-            
         });
-    }
-    getDishItems(firstDishes);
-    
+    }).catch(error => {
+        alert(error);
+    });
+    // Function getDishItem that loops though a list and creates dish items
     view.searchBtn.on('click', function (e) {
         e.preventDefault();
         view.dishList.empty();
@@ -19,6 +16,12 @@ var DishSearchController = function (view, model, app) {
         if (dishes.length == 0) {
             view.dishList.append('<p>Could not find any dishes</p>')
         }
-        getDishItems(dishes);
+        model.getAllDishes('starter', 'egg').then(dishes => {
+            dishes.forEach(function (dish) {
+                new DishItemView(view, $(".dishList"), dish, model, false, app);
+            });
+        }).catch(error => {
+            alert(error);
+        });
     })
 }

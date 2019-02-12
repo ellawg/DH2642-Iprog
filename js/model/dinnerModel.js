@@ -114,38 +114,39 @@ var DinnerModel = function () {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type, filter) {
-		return fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=10&offset=0&type=" + type + "&query=" + filter, {
+		return fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=10&offset=0&type=' + type + '&query=' + filter, {
 			headers: {
 				'X-RapidAPI-Key': API_KEY
 			}
 		}).then(response => response.json())
-			.then(data => data.results)
+		  .then(data => data.results)
 	}
-/* 
-	this.getAllDishes = function (type, filter) {
-
-
-		return dishes.filter(function (dish) {
-			var found = true;
-			if (filter) {
-				found = false;
-				dish.ingredients.forEach(function (ingredient) {
-					if (ingredient.name.toLowerCase().indexOf(filter) != -1) {
+	console.log(this.getAllDishes('starter', 'egg'))
+	/* 
+		this.getAllDishes = function (type, filter) {
+	
+	
+			return dishes.filter(function (dish) {
+				var found = true;
+				if (filter) {
+					found = false;
+					dish.ingredients.forEach(function (ingredient) {
+						if (ingredient.name.toLowerCase().indexOf(filter) != -1) {
+							found = true;
+						}
+					});
+					if (dish.name.toLowerCase().indexOf(filter) != -1) {
 						found = true;
 					}
-				});
-				if (dish.name.toLowerCase().indexOf(filter) != -1) {
-					found = true;
 				}
-			}
-			if (type == 'all') {
-				return found;
-			}
-			else {
-				return dish.type == type && found;
-			}
-		});
-	} */
+				if (type == 'all') {
+					return found;
+				}
+				else {
+					return dish.type == type && found;
+				}
+			});
+		} */
 
 	this.getEveryDish = function () {
 		return dishes;
