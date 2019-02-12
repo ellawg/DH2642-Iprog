@@ -4,6 +4,8 @@ var DinnerModel = function () {
 	// Lab 2 
 
 	var observers = [];
+	var API_KEY = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
+
 	this.addObserver = function (observer) { observers.push(observer); }
 
 	this.notifyObservers = function (changeDetails) {
@@ -15,12 +17,12 @@ var DinnerModel = function () {
 
 	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null }, dishId: 1 };
 
-	this.setDishId = function(id){
+	this.setDishId = function (id) {
 		data.dishId = id;
 		this.notifyObservers('dishDetailsId');
 	}
 
-	this.getDishId = function(){
+	this.getDishId = function () {
 		return data.dishId;
 	}
 
@@ -112,6 +114,17 @@ var DinnerModel = function () {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type, filter) {
+		return fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=10&offset=0&type=" + type + "&query=" + filter, {
+			headers: {
+				'X-RapidAPI-Key': API_KEY
+			}
+		}).then(response => response.json())
+			.then(data => data.results)
+	}
+/* 
+	this.getAllDishes = function (type, filter) {
+
+
 		return dishes.filter(function (dish) {
 			var found = true;
 			if (filter) {
@@ -132,7 +145,7 @@ var DinnerModel = function () {
 				return dish.type == type && found;
 			}
 		});
-	}
+	} */
 
 	this.getEveryDish = function () {
 		return dishes;
