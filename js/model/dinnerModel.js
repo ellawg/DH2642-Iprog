@@ -15,7 +15,7 @@ var DinnerModel = function () {
 	this.removeObserver = function (observer) {  /* remove observer from array */ }
 	// Lab 1 
 
-	const data = { numberOfGuests: 3, menu: { 'starter': null, 'main dish': null, 'dessert': null }, dishId: 1 };
+	const data = { numberOfGuests: 3, menu: [], dishId: 1 };
 
 	this.setDishId = function (id) {
 		data.dishId = id;
@@ -50,11 +50,8 @@ var DinnerModel = function () {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function () {
 		//TODO Lab 1
-		const starter = this.getSelectedDish('starter');
-		const main = this.getSelectedDish('main dish');
-		const dessert = this.getSelectedDish('dessert');
-		const menuList = [starter, main, dessert];
-		return menuList;
+		const menu = data.menu;
+		return menu;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -75,7 +72,7 @@ var DinnerModel = function () {
 		//TODO Lab 1
 		let totalPrice = 0.00;
 		const ingredients = this.getAllIngredients();
-		for (i=0; i<ingredients.length; i++){
+		for (i = 0; i < ingredients.length; i++) {
 			i += 1
 		}
 		totalPrice = totalPrice + i;
@@ -87,7 +84,7 @@ var DinnerModel = function () {
 		let totalDishPrice = 0;
 		const dish = this.getDish(id);
 		const ingredients = dish.extendedIngredients.name;
-		for (i=0; i<ingredients.length; i++){
+		for (i = 0; i < ingredients.length; i++) {
 			i += 1
 		}
 		totalDishPrice = totalDishPrice + i;
@@ -100,8 +97,13 @@ var DinnerModel = function () {
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function (id) {
 		//TODO Lab 1
-		const type = this.getDish(id).type;
-		data.menu[type] = id;
+		this.getDish(id).then(dish => {
+			console.log(dish)
+			data.menu.push(dish);
+			console.log(data.menu)
+		}).catch(error => {
+			alert(error);
+		});
 		this.notifyObservers('addDishToMenu');
 	}
 
@@ -123,7 +125,7 @@ var DinnerModel = function () {
 		}).then(response => response.json())
 			.then(data => data.results)
 	}
-	console.log(this.getAllDishes('starter', 'egg'))
+	
 
 	this.getEveryDish = function () {
 		return dishes;
@@ -131,13 +133,19 @@ var DinnerModel = function () {
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
-		return fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/'+ id +'/information', {
+		return fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/'+Number(id)+'/information', {
 			headers: {
 				'X-RapidAPI-Key': API_KEY
 			}
 		}).then(response => response.json())
 			.then(data => data.results)
 	}
+
+	this.getDish('684100').then(dish => {
+		console.log(dish)
+	}).catch(error => {
+		alert(error);
+	});
 
 
 	// the dishes variable contains an array of all the 

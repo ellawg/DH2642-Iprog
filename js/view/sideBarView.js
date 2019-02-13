@@ -14,15 +14,19 @@ var SideBarView = function (container, model) {
 
     var updates = function () {
         dishTable.empty();
+        model.addDishToMenu(142);
         numberOfGuests.html(model.getNumberOfGuests());
 
         totalPrice.html("SEK " + model.getTotalMenuPrice());
 
         const fullMenu = model.getFullMenu();
+        console.log(fullMenu)
 
         fullMenu.forEach(function (dish) {
+            console.log(dish)
             if (dish !== undefined) {
                 const name = dish.title;
+                console.log(dish.id)
                 const price = ("SEK " + model.getTotalDishPrice(dish.id));
                 dishTable.append('<tr>');
                 dishTable.append('<td>' + name + '</td>');
