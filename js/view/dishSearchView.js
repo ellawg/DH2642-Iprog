@@ -2,6 +2,7 @@ var DishSearchView = function (container, model, app) {
     const findDish = container.find('.findDish');
     const searchTitle = container.find('.searchTitle')
 
+
     var updates = function(){
         const menu = model.getFullMenu();
 
@@ -25,6 +26,7 @@ var DishSearchView = function (container, model, app) {
         
     }   
     updates();
+    
 
     this.update = function (model, changeDetails) {
         if (changeDetails == 'addDishToMenu'){
@@ -41,8 +43,18 @@ var DishSearchView = function (container, model, app) {
     this.searchBtn = container.find('#searchBtn');
 
     this.dishList = $("<div/>").addClass("dishList");
-
     container.append(this.dishList);
+
+    this.firstDishes = model.getAllDishes('all');
+
+    this.getDishItems = list => {
+        list.forEach(function (dish) {
+            new DishItemView($(".dishList"), dish, model, false, app);
+        });
+    }
+
+    this.typeOption = container.find( "select#typeOption" );
+    this.searchInput = container.find( "input#searchInput" );
 
     this.showView = function () {
         container.show();

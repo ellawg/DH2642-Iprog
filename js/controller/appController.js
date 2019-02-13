@@ -2,7 +2,7 @@ var AppController = function (model) {
 	// VIEWS
 	this.sideBarView = new SideBarView($(".sideBarView"), model);
 	this.welcomeView = new WelcomeView($(".welcomeView"), model);
-	this.dishSearchView = new DishSearchView($(".dishSearchView"), model);
+	this.dishSearchView = new DishSearchView($(".dishSearchView"), model, this);
 	this.dishDetailsView = new DishDetailsView($(".dishDetailsView"), model);
 	this.dishOverviewView = new DishOverviewView($(".dishOverviewView"), model, this);
 	this.overviewHeaderView = new OverviewHeaderView($(".overviewHeaderView"), model);

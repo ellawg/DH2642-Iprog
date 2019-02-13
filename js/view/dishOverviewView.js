@@ -14,7 +14,7 @@ var DishOverviewView = function (container, model, app) {
         menu.forEach(function (j) {
             if (j !== undefined) {
                 menuList.append(dishPrice);
-                new DishItemView(this, $(".dishPrice"), j, model, true, app);
+                new DishItemView($(".dishPrice"), j, model, true, app)
             }
         });
         menuList.append('<hr/> <p class="price">' + 'Total: ' + model.getTotalMenuPrice() + ' SEK </p>');

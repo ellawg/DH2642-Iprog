@@ -1,6 +1,6 @@
-var DishItemController = function(view, item, app, dishId, model){
+var DishItemController = function(item, app, dishId, model){
     item.click(function(){
         model.setDishId(dishId);
-        app.stateController(view, app.dishDetailsView);
+        app.stateController(app.dishSearchView, app.dishDetailsView);
     })
 }
