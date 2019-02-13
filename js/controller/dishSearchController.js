@@ -1,6 +1,8 @@
 var DishSearchController = function (view, model, app) {
+    view.loader.hide();
     // Function getDishItem that loops though a list and creates dish items
     view.searchBtn.on('click', function (e) {
+        view.loader.show();
         e.preventDefault();
         view.dishList.empty();
         const typeVal = document.getElementById('typeOption').value;
@@ -10,11 +12,14 @@ var DishSearchController = function (view, model, app) {
             view.dishList.append('<p>Could not find any dishes</p>')
         }
         model.getAllDishes(typeVal, inputVal).then(dishes => {
+            
             dishes.forEach(function (dish) {
                 new DishItemView(view, $(".dishList"), dish, model, false, app);
-            });
+            
+            })
+            view.loader.hide();
         }).catch(error => {
-            alert(error);
+            console.log('dish search error'+error);
         });
     })
 }

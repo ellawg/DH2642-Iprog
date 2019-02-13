@@ -1,10 +1,9 @@
 var DishSearchView = function (container, model, app) {
     const findDish = container.find('.findDish');
-    const searchTitle = container.find('.searchTitle')
+    const searchTitle = container.find('.searchTitle');
 
     var updates = function(){
         const menu = model.getFullMenu();
-
         function isUndefined(foodItem){
             if (foodItem == undefined){
                 return true;
@@ -13,7 +12,6 @@ var DishSearchView = function (container, model, app) {
                 return false;
             }
         }
-        
         if (menu.every(isUndefined) == true){
             searchTitle.empty();
             searchTitle.append('<h2>Find a dish</h2>');
@@ -39,8 +37,10 @@ var DishSearchView = function (container, model, app) {
     findDishForm.append('<form class="select"><select id="typeOption"><option value="all">All</option> <option value="starter">Starter</option><option value="main dish">Main dish</option><option value="dessert">Dessert</option></select></form><button class="button" type"button" id="searchBtn">Search</button>')
 
     this.searchBtn = container.find('#searchBtn');
-
     this.dishList = $("<div/>").addClass("dishList");
+    this.loader = $("<div/>").addClass("loader");
+    container.append(this.loader);
+
 
     container.append(this.dishList);
 

@@ -27,12 +27,11 @@ var DishDetailsView = function (container, model) {
                 specs.append('<tr>');
             })
         }).catch(error => {
-            alert(error);
+            console.log(error);
         });
 
         const numberOfGuests = model.getNumberOfGuests();
     }
-
 
 
     this.backButton = $("<button/>").addClass("button").attr('id', 'backToSearch').html('Back to search');
@@ -42,7 +41,6 @@ var DishDetailsView = function (container, model) {
 
 
     updates();
-
 
 
     this.update = function (model, changeDetails) {

@@ -118,7 +118,7 @@ var DinnerModel = function () {
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
 	this.getAllDishes = function (type, filter) {
-		return fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=10&offset=0&type=' + type + '&query=' + filter, {
+		return fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?number=50&offset=0&type=' + type + '&query=' + filter, {
 			headers: {
 				'X-RapidAPI-Key': API_KEY
 			}
@@ -141,12 +141,12 @@ var DinnerModel = function () {
 			.then(data => data.results)
 	}
 
-	this.getDish('684100').then(dish => {
+/* 	this.getDish('684100').then(dish => {
 		console.log(dish)
 	}).catch(error => {
-		alert(error);
+		console.log(error);
 	});
-
+ */
 
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,
