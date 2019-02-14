@@ -5,7 +5,7 @@ var DishItemView = function (view, container, dish, model, showPrice, app) {
                  .addClass("column box");
 
     container.append(dishDiv);
-    dishDiv.append('<img src="https://spoonacular.com/recipeImages/' + dish.image +'"' + '/>');
+    dishDiv.append('<img src="http://sunset.nada.kth.se:8080/iprog/group/35/recipeImages/' + dish.image +'"' + '/>');
     dishDiv.append('<a class="dishName">' + dish.title + '</a>');
     if (showPrice == true ){
         dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish.id) + ' SEK</p>');
