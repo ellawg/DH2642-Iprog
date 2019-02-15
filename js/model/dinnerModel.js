@@ -4,7 +4,7 @@ var DinnerModel = function () {
 	// Lab 2 
 
 	var observers = [];
-	var API_KEY = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
+
 
 	this.addObserver = function (observer) { observers.push(observer); }
 
@@ -101,9 +101,7 @@ var DinnerModel = function () {
 	this.addDishToMenu = function (id) {
 		//TODO Lab 1
 		this.getDish(id).then(dish => {
-			console.log(dish)
 			data.menu.push(dish);
-			console.log(data.menu)
 		}).catch(error => {
 			alert(error);
 		});
@@ -123,7 +121,7 @@ var DinnerModel = function () {
 	this.getAllDishes = function (type, filter) {
 		return fetch('http://sunset.nada.kth.se:8080/iprog/group/35/recipes/search?number=50&offset=0&type=' + type + '&query=' + filter, {
 			headers: {
-				'X-Mashape-Key': API_KEY
+				'X-Mashape-Key': apiKey
 			}
 		}).then(response => response.json())
 			.then(data => data.results)
@@ -138,18 +136,11 @@ var DinnerModel = function () {
 	this.getDish = function (id) {
 		return fetch('http://sunset.nada.kth.se:8080/iprog/group/35/recipes/'+Number(id)+'/information', {
 			headers: {
-				'X-Mashape-Key': API_KEY
+				'X-Mashape-Key': apiKey
 			}
 		}).then(response => response.json())
 			.then(data => data)
 	}
-
-/* 	this.getDish('684100').then(dish => {
-		console.log(dish)
-	}).catch(error => {
-		console.log(error);
-	});
- */
 
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,

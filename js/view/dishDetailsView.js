@@ -10,8 +10,9 @@ var DishDetailsView = function (container, model) {
         dishInfo.empty();
 
         this.id = model.getDishId();
-
+        
         model.getDish(this.id).then(dish => {
+            console.log(dish)
             
             dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>');
             dishInfo.append('<img class="singleImage" src="images/' + dish.image + '"' + '/>');
