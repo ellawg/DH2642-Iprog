@@ -14,13 +14,13 @@ var DishDetailsView = function (container, model) {
         model.getDish(this.id).then(dish => {
             console.log(dish)
             
-            dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>');
-            dishInfo.append('<img class="singleImage" src="images/' + dish.image + '"' + '/>');
-            dishInfo.append('<p>' + dish.description + '</p>');
+            dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>'); //hittar
+            dishInfo.append('<img src="https://spoonacular.com/recipeImages/' + dish.image +'"' + '/>');
+            dishInfo.append('<p>' + dish.instructions + '</p>');
 
             specs.append('Ingredients for ' + numberOfGuests + ' people');
 
-            dish.extendedIngredients.name.forEach(function (item) {
+            dish.extendedIngredients.forEach(function (item) {
                 specs.append('<tr>');
                 specs.append('<td>' + Math.ceil(item.quantity) * numberOfGuests + ' ' + item.unit + '</td>');
                 specs.append('<td>' + item.title + '</td>');

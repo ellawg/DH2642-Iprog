@@ -14,7 +14,8 @@ var DinnerPrintoutView = function (container, model) {
                 var imgName = $("<div/>")
                     .addClass("imgName");
                 row.append(imgName);
-                imgName.append('<img class="printImg" src="images/' + dish.image + '"' + '/>');
+
+                imgName.append('<img class="printImg "src="https://spoonacular.com/recipeImages/' + dish.image +'"' + '/>');
                 imgName.append('<p>' + dish.title + '</p>');
                 imgName.append('<p class="description" >' + dish.description + '</p>');
 
