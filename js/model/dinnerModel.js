@@ -82,11 +82,14 @@ var DinnerModel = function () {
 
 	this.getTotalDishPrice = function (id) {
 		let totalDishPrice = 0;
-		const dish = this.getDish(id);
-		const ingredients = dish.extendedIngredients.name;
-		for (i = 0; i < ingredients.length; i++) {
+		this.getDish(id).then(dish => {
+			const ingredients = dish.extendedIngredients.name;
+			for (i = 0; i < ingredients.length; i++) {
 			i += 1
 		}
+		}).catch(error => {
+			alert(error);
+		});
 		totalDishPrice = totalDishPrice + i;
 		totalDishPrice = totalDishPrice * this.getNumberOfGuests();
 		return totalDishPrice;
