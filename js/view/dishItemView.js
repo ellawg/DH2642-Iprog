@@ -8,7 +8,7 @@ var DishItemView = function (view, container, dish, model, showPrice, app) {
     dishDiv.append('<img src="https://spoonacular.com/recipeImages/' + dish.image +'"' + '/>');
     dishDiv.append('<a class="dishName">' + dish.title + '</a>');
     if (showPrice == true ){
-        dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish.id) + ' SEK</p>');
+        dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish) + ' SEK</p>');
     }
     new DishItemController(view, dishDiv, app, dish.id, model);
 

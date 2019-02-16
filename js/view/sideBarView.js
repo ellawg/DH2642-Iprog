@@ -14,7 +14,6 @@ var SideBarView = function (container, model) {
 
     var updates = function () {
         dishTable.empty();
-        model.addDishToMenu(142);
         numberOfGuests.html(model.getNumberOfGuests());
 
         totalPrice.html("SEK " + model.getTotalMenuPrice());
