@@ -23,7 +23,7 @@ var SideBarView = function (container, model) {
         fullMenu.forEach(function (dish) {
             if (dish !== undefined) {
                 const name = dish.title;
-                const price = ("SEK " + model.getTotalDishPrice(dish.id));
+                const price = ("SEK " + model.getTotalDishPrice(dish));
                 dishTable.append('<tr>');
                 dishTable.append('<td>' + name + '</td>');
                 dishTable.append('<td>' + price + '</td>');
