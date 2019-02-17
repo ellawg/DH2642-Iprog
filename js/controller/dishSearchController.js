@@ -13,8 +13,8 @@ var DishSearchController = function (view, model, app) {
         model.getAllDishes(typeVal, inputVal).then(dishes => {
             dishes.forEach(function (dish) {
                 new DishItemView(view, $(".dishList"), dish, model, false, app);
+                view.loader.hide();
             })
-            view.loader.hide();
         }).catch(error => {
             console.log('dish search error'+error);
         });

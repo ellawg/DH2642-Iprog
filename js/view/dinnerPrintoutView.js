@@ -15,9 +15,9 @@ var DinnerPrintoutView = function (container, model) {
                     .addClass("imgName");
                 row.append(imgName);
 
-                imgName.append('<img class="printImg "src="https://spoonacular.com/recipeImages/' + dish.image +'"' + '/>');
+                imgName.append('<img class="printImg" src="' + dish.image + '"' +'/>');
                 imgName.append('<p>' + dish.title + '</p>');
-                imgName.append('<p class="description" >' + dish.description + '</p>');
+                imgName.append('<p class="description" >' + dish.instructions + '</p>');
 
             }
         })

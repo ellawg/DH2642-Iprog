@@ -11,9 +11,9 @@ var DishDetailsView = function (container, model) {
 
         this.id = model.getDishId();
         
-        model.getDish(this.id).then(dish => {  
+        model.getDish(this.id).then(dish => { 
             dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>'); 
-            dishInfo.append('<img src="https://spoonacular.com/recipeImages/' + dish.image +'"' + '/>');
+            dishInfo.append('<img src="' + dish.image + '"' +'/>');
             dishInfo.append('<p>' + dish.instructions + '</p>');
 
             specs.append('Ingredients for ' + numberOfGuests + ' people');

@@ -32,10 +32,6 @@ var DishSearchView = function (container, model, app) {
     
     model.addObserver(this.update);
 
-    const findDishForm = container.find('.findDishForm');
-    findDishForm.append('<input class="input" id="searchInput" type="text" placeholder="Enter key words" value=""></input>');
-    findDishForm.append('<form class="select"><select id="typeOption"><option value="all">All</option> <option value="starter">Starter</option><option value="main dish">Main dish</option><option value="dessert">Dessert</option></select></form><button class="button" type"button" id="searchBtn">Search</button>')
-
     this.searchBtn = container.find('#searchBtn');
     this.dishList = $("<div/>").addClass("dishList");
     this.loader = $("<div/>").addClass("loader");
