@@ -10,20 +10,19 @@ var DishDetailsView = function (container, model) {
         dishInfo.empty();
 
         this.id = model.getDishId();
-
-        model.getDish(this.id).then(dish => {
-            
-            dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>');
-            dishInfo.append('<img class="singleImage" src="images/' + dish.image + '"' + '/>');
-            dishInfo.append('<p>' + dish.description + '</p>');
+        
+        model.getDish(this.id).then(dish => { 
+            dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>'); 
+            dishInfo.append('<img src="' + dish.image + '"' +'/>');
+            dishInfo.append('<p>' + dish.instructions + '</p>');
 
             specs.append('Ingredients for ' + numberOfGuests + ' people');
 
-            dish.extendedIngredients.name.forEach(function (item) {
+            dish.extendedIngredients.forEach((item) =>{
                 specs.append('<tr>');
                 specs.append('<td>' + Math.ceil(item.quantity) * numberOfGuests + ' ' + item.unit + '</td>');
-                specs.append('<td>' + item.title + '</td>');
-                specs.append('<td>' + 'SEK' + ' ' + item.price * numberOfGuests + '</td>');
+                specs.append('<td>' + item.name + '</td>');
+                specs.append('<td>' + 'SEK' + ' ' + item.amount * numberOfGuests + '</td>');
                 specs.append('<tr>');
             })
         }).catch(error => {

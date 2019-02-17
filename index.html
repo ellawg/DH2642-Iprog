@@ -12,8 +12,8 @@
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
     <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -72,9 +72,27 @@
                 <div class="findDish">
                     <div class="searchTitle">
                     </div>
-                    <form class="findDishForm">
+                    <div class="findDishForm">
+                        <input class="input" id="searchInput" type="text" placeholder="Enter key words" value=""></input>
+                        <form class="select">
+                            <select id="typeOption">
+                                <option value="all">All</option>
+                                <option value="side dish">Side dish</option>
+                                <option value="main course">Main course</option>
+                                <option value="dessert">Dessert</option>
+                                <option value="appetizer">Appetizer</option>
+                                <option value="salad">Salad</option>
+                                <option value="bread">Bread</option>
+                                <option value="breakfast">Breakfast</option>
+                                <option value="soup">Soup</option>
+                                <option value="beverage">Beverage</option>
+                                <option value="sauce">Sauce</option>
+                                <option value="drink">Drink</option>
+                            </select>
+                        </form>
+                        <button class="button" type"button" id="searchBtn">Search</button>
 
-                    </form>
+                    </div>
                     <!-- DISH LIST -->
                 </div>
             </div>
@@ -120,6 +138,7 @@
     <script src="js/view/dishDetailsView.js"></script>
     <script src="js/view/dishOverviewView.js"></script>
     <script src="js/view/dinnerPrintoutView.js"></script>
+    <script src="js/apiKey.js"></script>
     <!-- TODO: Here you should include JS code for your other views -->
 </body>
 
