@@ -15,9 +15,9 @@ var DinnerPrintoutView = function (container, model) {
                     .addClass("imgName");
                 row.append(imgName);
 
-                imgName.append('<img class="printImg" src="' + dish.image + '"' +'/>');
-                imgName.append('<p>' + dish.title + '</p>');
-                imgName.append('<p class="description" >' + dish.instructions + '</p>');
+                imgName.append('<img class="printImg column is-one-quarter" src="' + dish.image + '"' +'/>');
+                imgName.append('<p class="column">' + dish.title + '</p>');
+                imgName.append('<p class="description column is-half" >' + dish.instructions + '</p>');
 
             }
         })

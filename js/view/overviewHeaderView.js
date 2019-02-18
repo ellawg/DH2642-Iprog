@@ -1,14 +1,13 @@
 var OverviewHeaderView = function (container, model) {
-    const numberOfGuests = container.find('#numberOfGuests');
     const headerContent = container.find('.headerContent');
+    const numberOfGuests = container.find('#numberOfGuests');
     
-    headerContent.append('<h1 id="myDinner">My Dinner: <span id="numberOfGuests"></span> people</h1>')
-
     this.backEditButton = $("<button/>").addClass("button").attr('id', 'backEditButton').html('Go back and edit');
     headerContent.append(this.backEditButton);
 
 
     var updates = () => {
+        console.log(numberOfGuests);
         numberOfGuests.html(model.getNumberOfGuests());
     }
     this.update = function (model, changeDetails) {

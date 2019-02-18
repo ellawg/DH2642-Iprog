@@ -22,6 +22,7 @@ var DishDetailsView = function (container, model) {
             dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>');
             dishInfo.append('<img src="' + dish.image + '"' + '/>');
             dishInfo.append('<p>' + dish.instructions + '</p>');
+            
 
             specs.append('Ingredients for ' + numberOfGuests + ' people');
 
