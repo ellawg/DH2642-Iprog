@@ -16,7 +16,8 @@ var DishSearchController = function (view, model, app) {
                 view.loader.hide();
             })
         }).catch(error => {
-            console.log('dish search error'+error);
+            alert("Oh nooo something went wrong! :( \n" + error);
+            console.log('dish search error'+ error);
         });
     })
 }

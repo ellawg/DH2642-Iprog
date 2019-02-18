@@ -37,6 +37,7 @@ var DishDetailsView = function (container, model) {
             dishSpecs.show('slow');
             loader.hide();
         }).catch(error => {
+            alert("Oh nooo something went wrong! :( \n" + error);
             console.log(error);
         });
 

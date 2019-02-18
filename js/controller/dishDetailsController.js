@@ -4,6 +4,7 @@ var DishDetailsController = function(view, model, app){
             model.addDishToMenu(dish);
             })
         .catch(error => {
+            alert("Oh nooo something went wrong! :( \n" + error);
             console.log(error);
         })
     });
@@ -12,6 +13,7 @@ var DishDetailsController = function(view, model, app){
             model.removeDishFromMenu(dish);
             })
         .catch(error => {
+            alert("Oh nooo something went wrong! :( \n" + error);
             console.log(error);
         })
     });
