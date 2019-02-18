@@ -1,10 +1,11 @@
 var DishItemView = function (view, container, dish, model, showPrice, app) {
-
+    if (dish.image != undefined){
     var dishDiv = $("<div/>")
         .addClass("dish")
         .addClass("column box");
 
     container.append(dishDiv);
+
     if (dish.image.includes('https')) {
         dishDiv.append('<img src="' + dish.image + '"' + '/>')
     }
@@ -17,5 +18,5 @@ var DishItemView = function (view, container, dish, model, showPrice, app) {
         dishDiv.append('<p class="itemPrice">' + model.getTotalDishPrice(dish) + ' SEK</p>');
     }
     new DishItemController(view, dishDiv, app, dish.id, model);
-
+    }
 }
