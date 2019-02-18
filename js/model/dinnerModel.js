@@ -95,20 +95,19 @@ var DinnerModel = function () {
 	this.addDishToMenu = function (dish) {
 		//TODO Lab 1
 		const menu = this.getFullMenu();
-		if (menu.length === 0) {
-			menu.push(dish);
-		}
-		else {
-			const menu = this.getFullMenu();
+		let exists = false;
+
 			menu.forEach(function(item){
-				if (dish.id == item.id){
-					alert('Already in menu')
-				}
-				else{
-					menu.push(dish);
+				if (dish.id === item.id){
+					exists = true;
 				}
 			})
-		}
+			if (exists === false){
+				menu.push(dish)
+			}
+			else{
+				alert('Dish already in menu');
+			}
 	this.notifyObservers('addDishToMenu');
 }
 

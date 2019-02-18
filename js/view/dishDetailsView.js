@@ -27,13 +27,13 @@ var DishDetailsView = function (container, model) {
 
             dish.extendedIngredients.forEach((item) => {
                 specs.append('<tr>');
-                specs.append('<td>' + Math.ceil(item.quantity) * numberOfGuests + ' ' + item.unit + '</td>');
+                specs.append('<td>' + Math.ceil(item.amount) * numberOfGuests + ' ' + item.unit + '</td>');
                 specs.append('<td>' + item.name + '</td>');
                 specs.append('<td>' + 'SEK' + ' ' + item.amount * numberOfGuests + '</td>');
                 specs.append('<tr>');
             })
-            dishInfo.show();
-            dishSpecs.show();
+            dishInfo.show('slow');
+            dishSpecs.show('slow');
             loader.hide();
         }).catch(error => {
             console.log(error);
