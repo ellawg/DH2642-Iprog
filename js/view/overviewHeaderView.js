@@ -7,7 +7,6 @@ var OverviewHeaderView = function (container, model) {
 
 
     var updates = () => {
-        console.log(numberOfGuests);
         numberOfGuests.html(model.getNumberOfGuests());
     }
     this.update = function (model, changeDetails) {

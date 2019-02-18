@@ -96,7 +96,6 @@ var DinnerModel = function () {
 		//TODO Lab 1
 		const menu = this.getFullMenu();
 		let exists = false;
-
 			menu.forEach(function(item){
 				if (dish.id === item.id){
 					exists = true;
@@ -116,7 +115,7 @@ this.removeDishFromMenu = function (dish) {
 	//TODO Lab 1
 	const menu = this.getFullMenu();
 	menu.forEach(function (item) {
-		if (item == dish) {
+		if (dish.id === item.id) {
 			menu.pop(dish);
 		}
 	})

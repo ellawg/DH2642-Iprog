@@ -7,6 +7,14 @@ var DishDetailsController = function(view, model, app){
             console.log(error);
         })
     });
+    view.removeButton.on('click', function(){
+        model.getDish(view.id).then(dish => {  
+            model.removeDishFromMenu(dish);
+            })
+        .catch(error => {
+            console.log(error);
+        })
+    });
     view.backButton.on('click', function(){
         app.stateController(view, app.dishSearchView);
     })

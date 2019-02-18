@@ -48,6 +48,8 @@ var DishDetailsView = function (container, model) {
     dishSpecs.append(this.backButton);
     this.addButton = $("<button/>").addClass("button").attr('id', 'addToMenu').html('Add to menu');
     dishSpecs.append(this.addButton);
+    this.removeButton = $("<button/>").addClass("button").attr('id', 'removeFromMenu').html('Remove from menu');
+    dishSpecs.append(this.removeButton);
 
 
     updates();
