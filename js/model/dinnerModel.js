@@ -113,10 +113,12 @@ var DinnerModel = function () {
 //Removes dish from menu
 this.removeDishFromMenu = function (dish) {
 	//TODO Lab 1
+	
 	const menu = this.getFullMenu();
+	console.log(menu)
 	menu.forEach(function (item) {
 		if (dish.id === item.id) {
-			menu.pop(dish);
+			menu.splice(menu.indexOf(item), 1 );
 		}
 	})
 	this.notifyObservers('addDishToMenu');
