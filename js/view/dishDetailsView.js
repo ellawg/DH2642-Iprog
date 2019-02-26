@@ -8,6 +8,8 @@ var DishDetailsView = function (container, model) {
     const loader = $("<div/>").addClass("loader");
     container.append(loader);
 
+    this.backButton2 = $("<button/>").addClass("button").attr('id', 'backToSearch2').html('Back to search');
+   
 
     var updates = () => {
         dishInfo.hide();
@@ -36,21 +38,29 @@ var DishDetailsView = function (container, model) {
             dishInfo.show('slow');
             dishSpecs.show('slow');
             loader.hide();
+        
         }).catch(error => {
-            alert("Oh nooo something went wrong! :( \n" + error);
+            container.empty()
+            container.append('<p> Dish details could not be found :( </p>');
+            container.append(this.backButton2);
+            loader.hide();
+            container.show('slow');
             console.log(error);
         });
 
         const numberOfGuests = model.getNumberOfGuests();
     }
-
-
+    
     this.backButton = $("<button/>").addClass("button").attr('id', 'backToSearch').html('Back to search');
     dishSpecs.append(this.backButton);
     this.addButton = $("<button/>").addClass("button").attr('id', 'addToMenu').html('Add to menu');
     dishSpecs.append(this.addButton);
     this.removeButton = $("<button/>").addClass("button").attr('id', 'removeFromMenu').html('Remove from menu');
     dishSpecs.append(this.removeButton);
+   
+   
+
+    
 
 
     updates();

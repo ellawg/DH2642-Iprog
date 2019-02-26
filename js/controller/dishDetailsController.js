@@ -20,4 +20,7 @@ var DishDetailsController = function(view, model, app){
     view.backButton.on('click', function(){
         app.stateController(view, app.dishSearchView);
     })
+    view.backButton2.on('click', function(){
+        app.stateController(view, app.dishSearchView);
+    })
 }

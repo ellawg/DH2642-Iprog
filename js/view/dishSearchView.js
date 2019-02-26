@@ -40,6 +40,9 @@ var DishSearchView = function (container, model, app) {
 
     container.append(this.dishList);
 
+    this.typeOption = container.find("select#typeOption");
+    this.searchInput = container.find("input#searchInput");
+    
     this.showView = function () {
         container.show();
     }

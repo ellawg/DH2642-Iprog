@@ -1,10 +1,12 @@
 var DishItemView = function (view, container, dish, model, showPrice, app) {
-    if (dish.image != undefined){
+    if (dish.image != undefined && dish.image.includes('.jpg')){
+    
+
     var dishDiv = $("<div/>")
         .addClass("dish")
         .addClass("column box");
-
     container.append(dishDiv);
+
 
     if (dish.image.includes('https')) {
         dishDiv.append('<img src="' + dish.image + '"' + '/>')
