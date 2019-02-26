@@ -4,14 +4,13 @@ var DishDetailsView = function (container, model) {
     const dishSpecs = container.find('.dishSpecs');
     const specs = container.find('.specs');
 
-
     const loader = $("<div/>").addClass("loader");
     container.append(loader);
 
     this.backButton2 = $("<button/>").addClass("button").attr('id', 'backToSearch2').html('Back to search');
-   
+    this.numberOfGuests = model.getNumberOfGuests();
 
-    var updates = () => {
+    var updateDetails = (changeDetails) => {
         dishInfo.hide();
         dishSpecs.hide();
         loader.show();
@@ -19,26 +18,13 @@ var DishDetailsView = function (container, model) {
         dishInfo.empty();
 
         this.id = model.getDishId();
-
         model.getDish(this.id).then(dish => {
+            this.dish = dish;
+            console.log(this.dish)
             dishInfo.append('<h1 class="dishName">' + dish.title + '</h1>');
             dishInfo.append('<img src="' + dish.image + '"' + '/>');
             dishInfo.append('<p>' + dish.instructions + '</p>');
-            
-
-            specs.append('Ingredients for ' + numberOfGuests + ' people');
-
-            dish.extendedIngredients.forEach((item) => {
-                specs.append('<tr>');
-                specs.append('<td>' + Math.ceil(item.amount) * numberOfGuests + ' ' + item.unit + '</td>');
-                specs.append('<td>' + item.name + '</td>');
-                specs.append('<td>' + 'SEK' + ' ' + item.amount * numberOfGuests + '</td>');
-                specs.append('<tr>');
-            })
-            dishInfo.show('slow');
-            dishSpecs.show('slow');
-            loader.hide();
-        
+            updateIngred();
         }).catch(error => {
             container.empty()
             container.append('<p> Dish details could not be found :( </p>');
@@ -46,40 +32,52 @@ var DishDetailsView = function (container, model) {
             loader.hide();
             container.show('slow');
             console.log(error);
+            
         });
-
-        const numberOfGuests = model.getNumberOfGuests();
+        dishInfo.show('slow');
+        dishSpecs.show('slow');
+        loader.hide();
     }
-    
-    this.backButton = $("<button/>").addClass("button").attr('id', 'backToSearch').html('Back to search');
-    dishSpecs.append(this.backButton);
-    this.addButton = $("<button/>").addClass("button").attr('id', 'addToMenu').html('Add to menu');
-    dishSpecs.append(this.addButton);
-    this.removeButton = $("<button/>").addClass("button").attr('id', 'removeFromMenu').html('Remove from menu');
-    dishSpecs.append(this.removeButton);
-   
-   
 
-    
-
-
-    updates();
-
-
-    this.update = function (model, changeDetails) {
-        if (changeDetails == 'dishDetailsId') {
-            updates();
+        var updateIngred = () => {
+            this.numberOfGuests = model.getNumberOfGuests();
+            specs.empty();
+            specs.append('Ingredients for ' + this.numberOfGuests + ' people');
+            console.log(this.dish)
+            this.dish.extendedIngredients.forEach((item) => {
+                specs.append('<tr>');
+                specs.append('<td>' + Math.ceil(item.amount) * this.numberOfGuests + ' ' + item.unit + '</td>');
+                specs.append('<td>' + item.name + '</td>');
+                specs.append('<td>' + 'SEK' + ' ' + item.amount * this.numberOfGuests + '</td>');
+                specs.append('<tr>');
+            });
         }
-        if (changeDetails == 'numberOfGuests') {
-            updates();
-        }
-    }
 
-    this.showView = function () {
-        container.show();
+        this.backButton = $("<button/>").addClass("button").attr('id', 'backToSearch').html('Back to search');
+        dishSpecs.append(this.backButton);
+        this.addButton = $("<button/>").addClass("button").attr('id', 'addToMenu').html('Add to menu');
+        dishSpecs.append(this.addButton);
+        this.removeButton = $("<button/>").addClass("button").attr('id', 'removeFromMenu').html('Remove from menu');
+        dishSpecs.append(this.removeButton);
+       
+        updateDetails();
+        
+
+
+        this.update = function (model, changeDetails) {
+            if (changeDetails == 'dishDetailsId') {
+                updateDetails();
+            }
+            if (changeDetails == 'numberOfGuests') {
+                updateIngred();
+            }
+        }
+
+        this.showView = function () {
+            container.show();
+        }
+        this.hideView = function () {
+            container.hide();
+        }
+        model.addObserver(this.update);
     }
-    this.hideView = function () {
-        container.hide();
-    }
-    model.addObserver(this.update);
-}
