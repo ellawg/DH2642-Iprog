@@ -5,7 +5,6 @@ var DishSearchController = function (view, model, app) {
 
 
     model.getAllDishes(typeVal, inputVal).then(dishes => {
-        console.log(model.getAllDishes(typeVal))
         if (dishes.length == 0) {
             view.dishList.append('<p>Could not find any dishes</p>')
             view.loader.hide();
